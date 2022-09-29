@@ -1,4 +1,4 @@
-# How To build a REST directive with RedwoodJS Transformer Directives
+# How To Build a REST directive with RedwoodJS Transformer Directives
 
 Inspired by [Build a REST directive with GraphQL Tools](https://graphql.wtf/episodes/61-custom-rest-directive-with-graphql-tools) by [Jaime Barton](https://twitter.com/notrab) which you can watch here:
 
@@ -132,6 +132,12 @@ TLDR;
 Now with these SDL and Directives you can query the [RedwoodJS GraphQL API](https://redwoodjs.com/docs/graphql) and use [RedwoodJS cells](https://redwoodjs.com/docs/cells) to [render Posts](https://rw-office-hours-rest-directive.netlify.app/posts) and [photos](https://rw-office-hours-rest-directive.netlify.app/photos) -- live examples!
 
 See the [web side](web side) code for this.
+
+## Ideas to Improve the @rest directive
+
+- Add `headers` so can pass api tokens or other Authorization headers
+- Support `POST` and `GET` methods
+- Chain with another Transformer directive to reshape the response (transform JSON API data to match a different SDL) (maybe?)
 
 ## Setup
 

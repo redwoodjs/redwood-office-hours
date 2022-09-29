@@ -5,8 +5,11 @@ const HomePage = () => {
   return (
     <>
       <MetaTags
-        title="How To build a REST directive with RedwoodJS Transformer Directives"
-        description="How To build a REST directive with RedwoodJS Transformer Directives"
+        title="RedwoodJS Office Hours Example: How To Build a REST directive with RedwoodJS Transformer Directives"
+        description="How To Build a REST directive with RedwoodJS Transformer Directives"
+        author="David Thyresson"
+        ogUrl="https://rw-office-hours-rest-directive.netlify.app"
+        ogContentUrl="https://redwoodjs.com/images/rw-og.png"
       />
       <div className="space-y-4">
         <h1 className="text-xl">
