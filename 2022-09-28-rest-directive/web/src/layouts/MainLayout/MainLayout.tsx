@@ -3,6 +3,8 @@ import { HomeIcon } from '@heroicons/react/20/solid'
 import { NavLink, routes } from '@redwoodjs/router'
 import { Toaster } from '@redwoodjs/web/toast'
 
+import Footer from 'src/components/Footer/Footer'
+
 type MainLayoutProps = {
   children?: React.ReactNode
 }
@@ -64,6 +66,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         </ol>
       </nav>
       <div className="mx-auto my-12 max-w-7xl sm:px-6 lg:px-8">{children}</div>
+      <Footer />
     </>
   )
 }

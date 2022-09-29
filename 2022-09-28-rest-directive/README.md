@@ -1,10 +1,10 @@
 # How To build a REST directive with RedwoodJS Transformer Directives
 
-Inspired by [Build a REST directive with GraphQL Tools](https://graphql.wtf/episodes/61-custom-rest-directive-with-graphql-tools) by Jaime Barton which you can watch here:
+Inspired by [Build a REST directive with GraphQL Tools](https://graphql.wtf/episodes/61-custom-rest-directive-with-graphql-tools) by [Jaime Barton](https://twitter.com/notrab) which you can watch here:
 
 [![Video](https://i.ytimg.com/vi/KZf_Hw0JRE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=KZf_Hw0JRE0/)
 
-Jaime shows how how to build a custom @rest directive with GraphQL Tools to resolve data from a JSON API -- but, we'll use [Redwood Directives](https://redwoodjs.com/docs/directives) instead to show how you can still implement this feature but not have to go deep into the GraphQL structure.
+Jaime shows you how to build a custom @rest directive with GraphQL Tools to resolve data from a JSON API -- but, we'll use [Redwood Directives](https://redwoodjs.com/docs/directives) instead to show how you can still implement this feature but not have to go deep into the GraphQL structure.
 
 And ... we'll add a way to fetch a single item from a JSON API ... and tests!
 
