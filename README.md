@@ -14,4 +14,4 @@ This repo is where these demos and examples live.
 
 ## Discord Invite Link
 
-Here's an invite linkto [join the RedwoodJS Discord](http://discord.gg/redwoodjs).
+Here's an invite link to [join the RedwoodJS Discord](http://discord.gg/redwoodjs).

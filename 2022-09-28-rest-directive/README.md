@@ -85,7 +85,7 @@ export const schema = gql`
 `
 ```
 
-[Code](2022-09-28-rest-directive/api/src/graphql/posts.sdl.ts)
+[Posts SDL Code](api/src/graphql/posts.sdl.ts)
 
 #### For Photos
 
@@ -110,7 +110,7 @@ export const schema = gql`
 `
 ```
 
-[Code](2022-09-28-rest-directive/api/src/graphql/photos.sdl.ts)
+[Photos SDL Code](api/src/graphql/photos.sdl.ts)
 
 ### Implement @rest directive
 
@@ -124,6 +124,14 @@ TLDR;
 - Construct a url
 - Fetch from this url
 - Return the response
+
+[@rest Directive Code](api/src/directives/rest/rest.ts)
+
+## App
+
+Now with these SDL and Directives you can query the [RedwoodJS GraphQL API](https://redwoodjs.com/docs/graphql) and use [RedwoodJS cells](https://redwoodjs.com/docs/cells) to [render Posts](https://rw-office-hours-rest-directive.netlify.app/posts) and [photos](https://rw-office-hours-rest-directive.netlify.app/photos) -- live examples!
+
+See the [web side](web side) code for this.
 
 ## Setup
 
