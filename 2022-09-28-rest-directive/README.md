@@ -1,13 +1,93 @@
-# Build a REST directive with RedwoodJS Transformer Directives
+# How To build a REST directive with RedwoodJS Transformer Directives
 
-Inspired by Build a REST directive with GraphQL Tools
+Inspired by [Build a REST directive with GraphQL Tools](https://graphql.wtf/episodes/61-custom-rest-directive-with-graphql-tools) by Jaime Barton which you can watch here:
 
-https://graphql.wtf/episodes/61-custom-rest-directive-with-graphql-tools
+[![Video](https://i.ytimg.com/vi/KZf_Hw0JRE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=KZf_Hw0JRE0/)
 
-# README
+Jaime shows how how to build a custom @rest directive with GraphQL Tools to resolve data from a JSON API -- but, we'll use [Redwood Directives](https://redwoodjs.com/docs/directives) instead to show how you can still implement this feature but not have to go deep into the GraphQL structure.
+
+And ... we'll add a way to fetch a single item from a JSON API ... and tests!
+
+## Live Demo!!!
+
+👉 [Live Demo on Netlify](https://rw-office-hours-rest-directive.netlify.app)
+
+# Using a RedwoodJS Directive
+
+[Redwood Directives](https://redwoodjs.com/docs/directives) are a powerful feature, supercharging your GraphQL-backed Services.
+
+You can think of directives like "middleware" that let you run reusable code during GraphQL execution to perform tasks like authentication and formatting.
+
+Redwood uses them to make it a snap to protect your API Services from unauthorized access.
+
+Here we call those types of directives Validators.
+
+You can also use them to transform the output of your query result to modify string values, format dates, shield sensitive data, and more! We call those types of directives Transformers.
+
+We'll be using the Transformer Directive type to imoplemen the `@rest` directive.
+
+### Generating the Directive
 
 - yarn rw g directive rest --type=transformer
 - rest-directive % yarn workspace api add cross-undici-fetch
+
+### Implement the SDL
+
+We'll use the `https://jsonplaceholder.typicode.com` JSON api demo to get Photos and Posts.
+
+You can [browse the JSON response](https://jsonplaceholder.typicode.com/posts) for `https://jsonplaceholder.typicode.com/posts` to see how we match the SDL type `Post` to the example data:
+
+```json
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "qui est esse",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+    "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+  },
+  ...
+]
+```
+
+#### For Posts
+
+```
+export const schema = gql`
+  type Post {
+    id: Int!
+    title: String @uppercase
+    body: String
+    userId: String
+  }
+
+  type Query {
+    post(id: Int!): Post
+      @rest(url: "https://jsonplaceholder.typicode.com/posts/:id")
+      @skipAuth
+    posts: [Post]
+      @rest(url: "https://jsonplaceholder.typicode.com/posts")
+      @skipAuth
+  }
+`
+
+`
+```
+
+[Code](2022-09-28-rest-directive/api/src/graphql/posts.sdl.ts)
+
+#### For Photos
 
 ```
 export const schema = gql`
@@ -30,24 +110,22 @@ export const schema = gql`
 `
 ```
 
-```
-export const schema = gql`
-  type Post {
-    id: Int!
-    title: String
-    body: String
-    userId: String
-  }
+[Code](2022-09-28-rest-directive/api/src/graphql/photos.sdl.ts)
 
-  type Query {
-    posts: [Post]
-      @rest(url: "https://jsonplaceholder.typicode.com/posts")
-      @skipAuth
-  }
-`
-```
+### Implement @rest directive
 
----
+You can see the full [@rest transformer directive implementation](2022-09-28-rest-directive/api/src/directives/rest/rest.ts).
+
+TLDR;
+
+- It extracts the `url` set in the directive from it `directiveArgs`
+- Extracts any query `args` to be used to replace the named parameters.
+- Replace those params if needed (this is for the fetch post by by query)
+- Construct a url
+- Fetch from this url
+- Return the response
+
+## Setup
 
 Welcome to [RedwoodJS](https://redwoodjs.com)!
 
@@ -82,85 +160,6 @@ Your browser should automatically open to http://localhost:8910 where you'll see
 > ```
 >
 > For all the details, see the [CLI reference](https://redwoodjs.com/docs/cli-commands).
-
-## Prisma and the database
-
-Redwood wouldn't be a full-stack framework without a database. It all starts with the schema. Open the [`schema.prisma`](api/db/schema.prisma) file in `api/db` and replace the `UserExample` model with the following `Post` model:
-
-```
-model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  body      String
-  createdAt DateTime @default(now())
-}
-```
-
-Redwood uses [Prisma](https://www.prisma.io/), a next-gen Node.js and TypeScript ORM, to talk to the database. Prisma's schema offers a declarative way of defining your app's data models. And Prisma [Migrate](https://www.prisma.io/migrate) uses that schema to make database migrations hassle-free:
-
-```
-yarn rw prisma migrate dev
-
-# ...
-
-? Enter a name for the new migration: › create posts
-```
-
-> `rw` is short for `redwood`
-
-You'll be prompted for the name of your migration. `create posts` will do.
-
-Now let's generate everything we need to perform all the CRUD (Create, Retrieve, Update, Delete) actions on our `Post` model:
-
-```
-yarn redwood g scaffold post
-```
-
-Navigate to http://localhost:8910/posts/new, fill in the title and body, and click "Save":
-
-Did we just create a post in the database? Yup! With `yarn rw g scaffold <model>`, Redwood created all the pages, components, and services necessary to perform all CRUD actions on our posts table.
-
-## Frontend first with Storybook
-
-Don't know what your data models look like?
-That's more than ok—Redwood integrates Storybook so that you can work on design without worrying about data.
-Mockup, build, and verify your React components, even in complete isolation from the backend:
-
-```
-yarn rw storybook
-```
-
-Before you start, see if the CLI's `setup ui` command has your favorite styling library:
-
-```
-yarn rw setup ui --help
-```
-
-## Testing with Jest
-
-It'd be hard to scale from side project to startup without a few tests.
-Redwood fully integrates Jest with the front and the backends and makes it easy to keep your whole app covered by generating test files with all your components and services:
-
-```
-yarn rw test
-```
-
-To make the integration even more seamless, Redwood augments Jest with database [scenarios](https://redwoodjs.com/docs/testing.md#scenarios) and [GraphQL mocking](https://redwoodjs.com/docs/testing.md#mocking-graphql-calls).
-
-## Ship it
-
-Redwood is designed for both serverless deploy targets like Netlify and Vercel and serverful deploy targets like Render and AWS:
-
-```
-yarn rw setup deploy --help
-```
-
-Don't go live without auth!
-Lock down your front and backends with Redwood's built-in, database-backed authentication system ([dbAuth](https://redwoodjs.com/docs/authentication#self-hosted-auth-installation-and-setup)), or integrate with nearly a dozen third party auth providers:
-
-```
-yarn rw setup auth --help
-```
 
 ## Next Steps
 

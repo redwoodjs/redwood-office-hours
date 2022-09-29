@@ -10,7 +10,7 @@ const Routes = () => {
         <Route path="/photos" page={PhotosPage} name="photos" />
         <Route path="/posts/{id:Int}" page={PostPage} name="post" />
         <Route path="/posts" page={PostsPage} name="posts" />
-        <Route path="/" page={HomePage} name="home" />
+        <Route path="/" page={HomePage} name="home" prerender />
         <Route notfound page={NotFoundPage} />
       </Set>
     </Router>
