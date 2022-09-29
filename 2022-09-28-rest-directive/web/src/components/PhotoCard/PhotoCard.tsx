@@ -14,12 +14,14 @@ const PhotoCard = ({ photo }: { photo: Photo }) => {
         </p>
       </Link>
       <div className="mt-3">
-        <Link
-          to={routes.photo({ id: photo.id })}
+        <a
+          href={photo.url}
+          target="_blank"
+          rel="noreferrer"
           className="text-base font-semibold text-indigo-600 hover:text-indigo-500"
         >
-          See full photo
-        </Link>
+          See orignal photo
+        </a>
       </div>
     </Card>
   )

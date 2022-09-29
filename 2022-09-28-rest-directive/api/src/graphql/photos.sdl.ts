@@ -4,6 +4,7 @@ export const schema = gql`
     albumId: Int!
     title: String
     thumbnailUrl: String
+    url: String
   }
 
   type Query {
