@@ -22,7 +22,7 @@ const HomePage = () => {
             href="https://graphql.wtf/episodes/61-custom-rest-directive-with-graphql-tools"
           >
             Build a REST directive with GraphQL Tools
-          </a>
+          </a>{' '}
           by{' '}
           <a
             className="text-blue-500 hover:text-blue-700"
