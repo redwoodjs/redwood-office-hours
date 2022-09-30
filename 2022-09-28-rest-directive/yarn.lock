@@ -20400,9 +20400,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"netlify-cli@npm:12.0.1":
-  version: 12.0.1
-  resolution: "netlify-cli@npm:12.0.1"
+"netlify-cli@npm:12.0.2":
+  version: 12.0.2
+  resolution: "netlify-cli@npm:12.0.2"
   dependencies:
     "@netlify/build": ^27.18.6
     "@netlify/config": ^18.2.4
@@ -20507,13 +20507,13 @@ __metadata:
     unixify: ^1.0.0
     update-notifier: ^5.0.0
     uuid: ^9.0.0
-    wait-port: ^0.3.0
+    wait-port: ^1.0.1
     winston: ^3.2.1
     write-file-atomic: ^4.0.0
   bin:
     netlify: bin/run
     ntl: bin/run
-  checksum: 84aa39b023ca3e0454c2d69eaddb06ecf16bf095cd39ca72dd415246ee467c5173dee3fc9474cdc3c1c1bf8ade10f40714e5d3c74344fea6ca14b8fc24a2c467
+  checksum: 50c9f4c813c0cf0b3438d862731d2ff7ebf99067c61698e6d4912f51e5f9e420ab74e6c56bde0aecd1d0f989432f08c9c3c6094768c2d1e461281472e82305ad
   languageName: node
   linkType: hard
 
@@ -24320,7 +24320,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@redwoodjs/core": 3.0.3
-    netlify-cli: 12.0.1
+    netlify-cli: 12.0.2
     prettier-plugin-tailwindcss: 0.1.13
   languageName: unknown
   linkType: soft
@@ -27693,16 +27693,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wait-port@npm:^0.3.0":
-  version: 0.3.1
-  resolution: "wait-port@npm:0.3.1"
+"wait-port@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "wait-port@npm:1.0.1"
   dependencies:
     chalk: ^4.1.2
     commander: ^9.3.0
     debug: ^4.3.4
   bin:
     wait-port: bin/wait-port.js
-  checksum: baa27c1c712819863f0d91de17bfb64f58e0e31af3a41581bcc20d5b8012308c3853c084152404bdc49bae8aaa99d21ac82126cde54330d9c743fbf2c1ddea10
+  checksum: 1b12a0538ab395f902abf9e3a59998860a0c7c500a55df5f23dcd11d15a4f41407b082b75fb916adf942002ff996737fbaecda4ce8684286ac672ed82fc0af2f
   languageName: node
   linkType: hard
 
