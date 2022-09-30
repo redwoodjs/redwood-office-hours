@@ -60,7 +60,13 @@ const HomePage = () => {
         </p>
         <p>
           And ... we'll add a way to fetch a single item from a JSON API ... and
-          tests!
+          <a
+            href="https://github.com/redwoodjs/redwood-office-hours/blob/main/2022-09-28-rest-directive/api/src/directives/rest/rest.test.ts"
+            className="text-blue-500 hover:text-blue-700"
+          >
+            tests
+          </a>
+          !
         </p>
         <h2 className="text-xl">Demo</h2>
         <div className="space-y-4">
