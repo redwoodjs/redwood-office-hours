@@ -129,6 +129,53 @@ TLDR;
 
 [@rest Directive Code](api/src/directives/rest/rest.ts)
 
+#### Testing
+
+Yes, you can mock the JSON API response to test that your directive resturns the expected data.
+
+See how the `mockRedwoodDirective` testing utility let's you pass in the directiveArtgs and args for the url with a mocked response:
+
+```js
+// api/src/directives/rest/rest.test.ts
+
+jest.mock('cross-undici-fetch', () => ({
+  fetch: (url) => {
+    switch (url) {
+      case 'https://example.com':
+        return {
+          ok: true,
+          json: async () => {
+            return POSTS_JSON
+          },
+        }
+      case 'https://example.com/1':
+        return {
+          ok: true,
+          json: async () => {
+            return POSTS_JSON[0]
+          },
+        }
+    }
+  },
+}))
+
+// ...
+
+describe('demonstrate use of args for named parameter replacement', () => {
+  it('with a url for a single item, returns the json response for that json api url', async () => {
+    const mockExecution = mockRedwoodDirective(rest, {
+      mockedResolvedValue: '',
+      directiveArgs: { url: 'https://example.com/:id' },
+      args: { id: 1 },
+    })
+
+    await expect(mockExecution()).resolves.toEqual(POSTS_JSON[0])
+  })
+})
+```
+
+See [@rest Directive Unit Test Code](api/src/directives/rest/rest.test.ts)
+
 ## App
 
 Now with these SDL and Directives you can query the [RedwoodJS GraphQL API](https://redwoodjs.com/docs/graphql) and use [RedwoodJS cells](https://redwoodjs.com/docs/cells) to [render Posts](https://rw-office-hours-rest-directive.netlify.app/posts) and [photos](https://rw-office-hours-rest-directive.netlify.app/photos) -- live examples!
