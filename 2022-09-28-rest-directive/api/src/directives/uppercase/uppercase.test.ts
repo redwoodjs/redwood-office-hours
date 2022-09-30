@@ -8,11 +8,11 @@ describe('uppercase directive', () => {
     expect(getDirectiveName(uppercase.schema)).toBe('uppercase')
   })
 
-  it('has a uppercase implementation transforms the value', () => {
+  it('has a uppercase implementation that transforms the value', () => {
     const mockExecution = mockRedwoodDirective(uppercase, {
       mockedResolvedValue: 'foo',
     })
 
-    expect(mockExecution()).toBe('bar')
+    expect(mockExecution()).toBe('FOO')
   })
 })

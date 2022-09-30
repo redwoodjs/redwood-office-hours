@@ -16,7 +16,7 @@ export const schema = gql`
 `
 
 const replaceUrlNamedParameters = (args, directiveArgs): string => {
-  if (directiveArgs.url) {
+  if (directiveArgs?.url) {
     let url = directiveArgs.url
     const params = [...directiveArgs.url.matchAll(/\/:(.+)/g)]
 
@@ -49,7 +49,6 @@ const replaceUrlNamedParameters = (args, directiveArgs): string => {
 
 const transform: TransformerDirectiveFunc = async ({ args, directiveArgs }) => {
   const url = replaceUrlNamedParameters(args, directiveArgs)
-
   try {
     logger.debug({ custom: url }, 'Fetching url ...')
     const res = await fetch(url)
@@ -59,7 +58,7 @@ const transform: TransformerDirectiveFunc = async ({ args, directiveArgs }) => {
       return await res.json()
     }
   } catch (e) {
-    logger.error({ custom: url }, 'Unable to fetch url')
+    logger.error({ custom: url, e }, 'Unable to fetch url')
 
     throw new RedwoodError('Unable to fetch url')
   }
