@@ -188,6 +188,20 @@ See the [web side](web) code for this.
 - Support `POST` and `GET` methods
 - Chain with another Transformer directive to reshape the response (transform JSON API data to match a different SDL) (maybe?)
 
+## Motivation aka Why not just implement a service?
+
+You may be wondering, why use this `@rest` directive instead of implementing the same SDL and the implementing a service called `posts` and `post` and then in that service, use the same cross-unidici-fetch to fetch the url?
+
+And the answer, is ... I'd probably implement this type of feature using a service.
+
+With a service, then a service can call another service (if some other feature needs a few posts to process)... or I could have a serverless function call the posts service to fetch for a RESTful API :).
+
+I might even create a fetch client specifically for the JSON API in `api/lib`.
+
+But, for very simple REST API fetches one can save quite a bit of code by not having to implement a service method for each endpoint and each get many and get singular.
+
+This Office Hours Example is of a showcase of the power and simoplicity of creating Transformer Directives and how one can test them as well.
+
 ## Setup
 
 Welcome to [RedwoodJS](https://redwoodjs.com)!
