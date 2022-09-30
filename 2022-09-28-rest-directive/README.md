@@ -63,7 +63,9 @@ You can [browse the JSON response](https://jsonplaceholder.typicode.com/posts) f
 
 #### For Posts
 
-```
+```js
+// api/src/graphql/posts.sdl.ts
+
 export const schema = gql`
   type Post {
     id: Int!
@@ -81,15 +83,15 @@ export const schema = gql`
       @skipAuth
   }
 `
-
-`
 ```
 
 [Posts SDL Code](api/src/graphql/posts.sdl.ts)
 
 #### For Photos
 
-```
+```js
+// api/src/graphql/photos.sdl.ts
+
 export const schema = gql`
   type Photo {
     id: Int!
@@ -131,7 +133,7 @@ TLDR;
 
 Now with these SDL and Directives you can query the [RedwoodJS GraphQL API](https://redwoodjs.com/docs/graphql) and use [RedwoodJS cells](https://redwoodjs.com/docs/cells) to [render Posts](https://rw-office-hours-rest-directive.netlify.app/posts) and [photos](https://rw-office-hours-rest-directive.netlify.app/photos) -- live examples!
 
-See the [web side](web side) code for this.
+See the [web side](web) code for this.
 
 ## Ideas to Improve the @rest directive
 
@@ -150,13 +152,13 @@ Welcome to [RedwoodJS](https://redwoodjs.com)!
 
 Start by installing dependencies:
 
-```
+```bash
 yarn install
 ```
 
 Then change into that directory and start the development server:
 
-```
+```bash
 cd my-redwood-project
 yarn redwood dev
 ```
