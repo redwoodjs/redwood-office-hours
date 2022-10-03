@@ -11,6 +11,7 @@ This repo is where these demos and examples live.
 ## List of Examples
 
 - [2022-09-28-rest-directive](2022-09-28-rest-directive/README.md) - How To build a REST directive with RedwoodJS Transformer Directives (2022-09-28)
+- [2022-10-05-enum-select-options](2022-10-05-enum-select-options/README.md) - # How To Use Human Readable Enums in a Form with a SelectList
 
 ## Discord Invite Link
 
