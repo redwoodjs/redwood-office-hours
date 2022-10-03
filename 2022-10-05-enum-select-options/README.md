@@ -8,7 +8,7 @@
 
 ### Current Scaffolding
 
-Scaffolding will render enums in forms with Radio Options of Checkbioxes.
+Scaffolding will render enums in forms with Radio Options of Checkboxes.
 
 But, scaffolding won't pickup new enums .... you would have to re-scaffold and force updated the web components.
 
