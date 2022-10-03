@@ -1,5 +1,5 @@
 import { navigate, routes } from '@redwoodjs/router'
-import { useMutation, useQuery } from '@redwoodjs/web'
+import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
 import CharacterForm from 'src/components/Character/CharacterForm'
@@ -10,15 +10,6 @@ const CREATE_CHARACTER_MUTATION = gql`
   mutation CreateCharacterMutation($input: CreateCharacterInput!) {
     createCharacter(input: $input) {
       id
-    }
-  }
-`
-
-export const GET_EPISODE_SELECT_LIST = gql`
-  query GetEpisodeOptions {
-    episodeOptions {
-      value
-      label
     }
   }
 `
@@ -41,20 +32,13 @@ const NewCharacter = () => {
     createCharacter({ variables: { input } })
   }
 
-  const { data } = useQuery(GET_EPISODE_SELECT_LIST)
-
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
         <h2 className="rw-heading rw-heading-secondary">New Character</h2>
       </header>
       <div className="rw-segment-main">
-        <CharacterForm
-          onSave={onSave}
-          loading={loading}
-          error={error}
-          episodes={data?.episodeOptions}
-        />
+        <CharacterForm onSave={onSave} loading={loading} error={error} />
       </div>
     </div>
   )

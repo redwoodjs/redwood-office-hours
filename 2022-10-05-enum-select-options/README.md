@@ -1,3 +1,83 @@
+# How To Use Human Readable Enums in a Form with a SelectList
+
+## The Problem
+
+### Current Scaffolding
+
+## Code
+
+### Prisma Schema
+
+```prisma
+enum Episode {
+  NEW_HOPE
+  EMPIRE_STRIKES_BACK
+  RETURN_OF_THE_JEDI
+  ROGUE_ONE
+}
+
+model Character {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  appearsIn Episode[]
+}
+```
+
+### GraphQL Schema
+
+```javascript
+// 2022-10-05-enum-select-options/api/src/graphql/options.sdl.ts
+
+export const schema = gql`
+  interface OptionItem {
+    label: String!
+  }
+
+  type EpisodeOption implements OptionItem {
+    value: Episode!
+    label: String!
+  }
+
+  type Query {
+    episodeOptions: [EpisodeOption!]! @skipAuth
+  }
+`
+```
+
+### Services
+
+```javascript
+// 2022-10-05-enum-select-options/api/src/services/episodeOptions/episodeOptions.ts
+
+import { Episode } from '@prisma/client'
+import type { QueryResolvers, EpisodeOption } from 'types/graphql'
+
+const label = (str: string) => {
+  return str
+    .toLowerCase()
+    .split('_')
+    .map(function (word) {
+      return word.replace(word[0], word[0].toUpperCase())
+    })
+    .join(' ')
+}
+
+const getEnumValues = (enumType: Record<string, string>) => {
+  return Object.values(enumType).map((value) => {
+    return {
+      value,
+      label: label(value),
+    }
+  })
+}
+
+export const episodeOptions: QueryResolvers['episodeOptions'] = () => {
+  return getEnumValues(Episode) as EpisodeOption[]
+}
+```
+
+---
+
 # README
 
 Welcome to [RedwoodJS](https://redwoodjs.com)!
@@ -27,9 +107,11 @@ Your browser should automatically open to http://localhost:8910 where you'll see
 > Congratulations on running your first Redwood CLI command!
 > From dev to deploy, the CLI is with you the whole way.
 > And there's quite a few commands at your disposal:
+>
 > ```
 > yarn redwood --help
 > ```
+>
 > For all the details, see the [CLI reference](https://redwoodjs.com/docs/cli-commands).
 
 ## Prisma and the database
@@ -94,7 +176,7 @@ Redwood fully integrates Jest with the front and the backends and makes it easy 
 yarn rw test
 ```
 
-To make the integration even more seamless, Redwood augments Jest with database [scenarios](https://redwoodjs.com/docs/testing.md#scenarios)  and [GraphQL mocking](https://redwoodjs.com/docs/testing.md#mocking-graphql-calls).
+To make the integration even more seamless, Redwood augments Jest with database [scenarios](https://redwoodjs.com/docs/testing.md#scenarios) and [GraphQL mocking](https://redwoodjs.com/docs/testing.md#mocking-graphql-calls).
 
 ## Ship it
 
