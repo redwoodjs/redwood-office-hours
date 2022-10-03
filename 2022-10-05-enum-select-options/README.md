@@ -2,9 +2,21 @@
 
 ## The Problem
 
+- Cannot get values from the enum to make a select control
+- Web cannot access Prism client types
+- Enum values don't have friendly, raedable labels
+
 ### Current Scaffolding
 
+Scaffolding will render enums in forms with Radio Options of Checkbioxes.
+
+But, scaffolding won't pickup new enums .... you would have to re-scaffold and force updated the web components.
+
+Plus, select fields take up less space in a form.
+
 ## Code
+
+Let's make a way to return enum values and labels in a friendly way!
 
 ### Prisma Schema
 
@@ -24,6 +36,8 @@ model Character {
 ```
 
 ### GraphQL Schema
+
+Need Postgres for enums ....
 
 ```javascript
 // 2022-10-05-enum-select-options/api/src/graphql/options.sdl.ts
