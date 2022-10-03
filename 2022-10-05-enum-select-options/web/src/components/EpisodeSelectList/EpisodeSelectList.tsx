@@ -12,9 +12,9 @@ export const GET_EPISODE_SELECT_LIST = gql`
   }
 `
 
-const EpisodeSelectList = (character: Character) => {
+const EpisodeSelectList = ({ character }: { character: Character }) => {
   const { data } = useQuery(GET_EPISODE_SELECT_LIST)
-  console.log(character)
+
   return (
     <SelectField
       className="w-full rounded-md border border-gray-300 bg-white py-2 px-4 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
@@ -22,7 +22,7 @@ const EpisodeSelectList = (character: Character) => {
       multiple={true}
       validation={{ required: true }}
     >
-      {data.episodeOptions?.map((episode) => {
+      {data?.episodeOptions?.map((episode) => {
         return (
           <option
             key={episode.value}

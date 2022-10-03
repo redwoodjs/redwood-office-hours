@@ -12,6 +12,7 @@ import type {
   EditCharacterById,
   UpdateCharacterInput,
   EpisodeOption,
+  Character,
 } from 'types/graphql'
 import type { RWGqlError } from '@redwoodjs/forms'
 
