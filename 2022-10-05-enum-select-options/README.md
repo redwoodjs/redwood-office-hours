@@ -1,5 +1,7 @@
 # How To Use Human Readable Enums in a Form with a SelectList
 
+👉 Demo: [https://rw-office-hours-enum-select-list.netlify.app](https://rw-office-hours-enum-select-list.netlify.app)
+
 ## The Problem
 
 - Cannot get values from the enum to make a select control
