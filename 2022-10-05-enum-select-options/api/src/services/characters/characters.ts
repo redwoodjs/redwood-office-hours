@@ -3,7 +3,7 @@ import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 import { db } from 'src/lib/db'
 
 export const characters: QueryResolvers['characters'] = () => {
-  return db.character.findMany()
+  return db.character.findMany({ orderBy: { name: 'asc' } })
 }
 
 export const character: QueryResolvers['character'] = ({ id }) => {
