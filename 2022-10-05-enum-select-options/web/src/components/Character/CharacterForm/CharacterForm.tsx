@@ -72,7 +72,7 @@ const CharacterForm = (props: CharacterFormProps) => {
           Appears in
         </Label>
 
-        {false && (
+        {true && (
           <>
             <div className="rw-check-radio-items">
               <CheckboxField
@@ -132,7 +132,7 @@ const CharacterForm = (props: CharacterFormProps) => {
           </>
         )}
 
-        {true && <EpisodeSelectList character={props.character} />}
+        {false && <EpisodeSelectList character={props.character} />}
 
         <FieldError name="appearsIn" className="rw-field-error" />
 

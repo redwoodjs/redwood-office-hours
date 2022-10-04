@@ -1,20 +1,27 @@
-# How To Use Human Readable Enums in a Form with a SelectList
+# How to Make SelectFields for Prisma enums in RedwoodJS
 
 👉 Demo: [https://rw-office-hours-enum-select-list.netlify.app](https://rw-office-hours-enum-select-list.netlify.app)
 
-## The Problem
-
-- Cannot get values from the enum to make a select control
-- Web cannot access Prism client types
-- Enum values don't have friendly, raedable labels
-
-### Current Scaffolding
-
-Scaffolding will render enums in forms with Radio Options of Checkboxes.
-
-But, scaffolding won't pickup new enums .... you would have to re-scaffold and force updated the web components.
-
-Plus, select fields take up less space in a form.
+<p>
+  <h2 className="py-4 text-xl font-semibold">The Problem</h2>
+  <ul className="list-disc">
+    <li>Cannot get values from the enum to make a select control</li>
+    <li>Web cannot access Prisma client types</li>
+    <li>Enum values don't have friendly, readable labels</li>
+  </ul>
+  <h2 className="py-4 text-xl font-medium">Current Scaffolding</h2>
+  <p>
+    Scaffolding will render enums in forms with Radio Options or
+    Checkboxes.
+  </p>
+  <ul className="mt-4 list-disc">
+    <li>
+      But, scaffolding won't pickup new enums .... you would have to
+      re-scaffold and force update the web components.
+    </li>
+    <li>Plus, select fields take up less space in a form.</li>
+  </ul>
+</p>
 
 ## Code
 
@@ -68,15 +75,7 @@ export const schema = gql`
 import { Episode } from '@prisma/client'
 import type { QueryResolvers, EpisodeOption } from 'types/graphql'
 
-const label = (str: string) => {
-  return str
-    .toLowerCase()
-    .split('_')
-    .map(function (word) {
-      return word.replace(word[0], word[0].toUpperCase())
-    })
-    .join(' ')
-}
+import { label } from 'src/lib/helpers'
 
 const getEnumValues = (enumType: Record<string, string>) => {
   return Object.values(enumType).map((value) => {
@@ -90,6 +89,7 @@ const getEnumValues = (enumType: Record<string, string>) => {
 export const episodeOptions: QueryResolvers['episodeOptions'] = () => {
   return getEnumValues(Episode) as EpisodeOption[]
 }
+
 ```
 
 ---

@@ -18,10 +18,6 @@ export const QUERY = gql`
       name
       appearsIn
     }
-    episodeOptions {
-      value
-      label
-    }
   }
 `
 
@@ -41,10 +37,7 @@ export const Failure = ({ error }: CellFailureProps) => (
   <div className="rw-cell-error">{error?.message}</div>
 )
 
-export const Success = ({
-  character,
-  episodeOptions,
-}: CellSuccessProps<EditCharacterById>) => {
+export const Success = ({ character }: CellSuccessProps<EditCharacterById>) => {
   const [updateCharacter, { loading, error }] = useMutation(
     UPDATE_CHARACTER_MUTATION,
     {
@@ -75,7 +68,6 @@ export const Success = ({
       <div className="rw-segment-main">
         <CharacterForm
           character={character}
-          episodes={episodeOptions}
           onSave={onSave}
           error={error}
           loading={loading}
