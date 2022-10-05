@@ -200,7 +200,7 @@ I might even create a fetch client specifically for the JSON API in `api/lib`.
 
 But, for very simple REST API fetches one can save quite a bit of code by not having to implement a service method for each endpoint and each get many and get singular.
 
-This Office Hours Example is of a showcase of the power and simoplicity of creating Transformer Directives and how one can test them as well.
+This Office Hours Example is of a showcase of the power and simplicity of creating Transformer Directives and how one can test them as well.
 
 ## Setup
 
