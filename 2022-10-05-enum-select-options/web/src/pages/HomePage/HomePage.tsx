@@ -42,9 +42,9 @@ const HomePage = () => {
         and{' '}
         <Link
           className="text-blue-500 hover:text-blue-700"
-          to={routes.characters()}
+          to={routes.spaceships()}
         >
-          spaceships (TODO)
+          spaceships
         </Link>{' '}
         and what episodes they appear in.
       </p>

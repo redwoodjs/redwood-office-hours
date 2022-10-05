@@ -1,0 +1,2 @@
+-- AlterEnum
+ALTER TYPE "Episode" ADD VALUE 'PHANTOM_MENACE';

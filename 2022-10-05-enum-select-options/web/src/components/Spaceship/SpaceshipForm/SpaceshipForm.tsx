@@ -8,37 +8,31 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
-import type {
-  EditCharacterById,
-  UpdateCharacterInput,
-  EpisodeOption,
-  Character,
-} from 'types/graphql'
+import type { EditSpaceshipById, UpdateSpaceshipInput } from 'types/graphql'
 import type { RWGqlError } from '@redwoodjs/forms'
-
 import EpisodeSelectList from 'src/components/EpisodeSelectList/EpisodeSelectList'
 
-type FormCharacter = NonNullable<EditCharacterById['character']>
+type FormSpaceship = NonNullable<EditSpaceshipById['spaceship']>
 
-export interface CharacterFormProps {
-  character?: EditCharacterById['character']
-  onSave: (data: UpdateCharacterInput, id?: FormCharacter['id']) => void
+interface SpaceshipFormProps {
+  spaceship?: EditSpaceshipById['spaceship']
+  onSave: (data: UpdateSpaceshipInput, id?: FormSpaceship['id']) => void
   error: RWGqlError
   loading: boolean
 }
 
-const CharacterForm = (props: CharacterFormProps) => {
-  const onSubmit = (data: FormCharacter) => {
+const SpaceshipForm = (props: SpaceshipFormProps) => {
+  const onSubmit = (data: FormSpaceship) => {
     if (data.appearsIn) {
       data.appearsIn = data.appearsIn.filter((value) => !!value)
     }
 
-    props.onSave(data, props?.character?.id)
+    props.onSave(data, props?.spaceship?.id)
   }
 
   return (
     <div className="rw-form-wrapper">
-      <Form<FormCharacter> onSubmit={onSubmit} error={props.error}>
+      <Form<FormSpaceship> onSubmit={onSubmit} error={props.error}>
         <FormError
           error={props.error}
           wrapperClassName="rw-form-error-wrapper"
@@ -56,7 +50,7 @@ const CharacterForm = (props: CharacterFormProps) => {
 
         <TextField
           name="name"
-          defaultValue={props.character?.name}
+          defaultValue={props.spaceship?.name}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
@@ -72,7 +66,7 @@ const CharacterForm = (props: CharacterFormProps) => {
           Appears in
         </Label>
 
-        <EpisodeSelectList appears={props.character} />
+        <EpisodeSelectList appears={props.spaceship} />
 
         <FieldError name="appearsIn" className="rw-field-error" />
 
@@ -86,4 +80,4 @@ const CharacterForm = (props: CharacterFormProps) => {
   )
 }
 
-export default CharacterForm
+export default SpaceshipForm

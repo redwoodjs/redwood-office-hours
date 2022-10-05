@@ -13,9 +13,21 @@ enum Episode {
   EMPIRE_STRIKES_BACK
   RETURN_OF_THE_JEDI
   ROGUE_ONE
+  PHANTOM_MENACE
+  ATTACK_OF_THE_CLONES
+  REVENGE_OF_THE_SITH
+  THE_FORCE_AWAKENS
+  THE_LAST_JEDI
+  THE_RISE_OF_SKYWALKER
 }
 
 model Character {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  appearsIn Episode[]
+}
+
+model Spaceship {
   id        Int       @id @default(autoincrement())
   name      String    @unique
   appearsIn Episode[]

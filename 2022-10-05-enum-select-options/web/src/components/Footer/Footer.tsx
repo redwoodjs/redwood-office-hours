@@ -11,7 +11,7 @@ const Footer = () => {
     },
     {
       name: 'GitHub',
-      href: 'https://github.com/redwoodjs/redwood-office-hours/tree/main/2022-09-28-rest-directive',
+      href: 'https://github.com/redwoodjs/redwood-office-hours/tree/main/2022-10-05-enum-select-options',
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
