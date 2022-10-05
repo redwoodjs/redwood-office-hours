@@ -2848,12 +2848,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@heroicons/react@npm:2.0.11":
-  version: 2.0.11
-  resolution: "@heroicons/react@npm:2.0.11"
+"@heroicons/react@npm:2.0.12":
+  version: 2.0.12
+  resolution: "@heroicons/react@npm:2.0.12"
   peerDependencies:
     react: ">= 16"
-  checksum: 08de055980fbcdcb9c2509ab751064eec11ec02a40e535d368c4bae0fa28b502d6b0c0eb1237652b213fbe543f5ccca461707a4756c34131ff2232ceb6bb5fe7
+  checksum: 4133e94871a7c3538d0286929fb1c0c631675554b7fa559dfa88e52c3677dbb30d11464fcae7cf5e4d81b295bc4e0ff41347aaca94d8b5567606e47e3c78aa82
   languageName: node
   linkType: hard
 
@@ -27826,7 +27826,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@heroicons/react": 2.0.11
+    "@heroicons/react": 2.0.12
     "@redwoodjs/forms": 3.0.3
     "@redwoodjs/router": 3.0.3
     "@redwoodjs/web": 3.0.3
