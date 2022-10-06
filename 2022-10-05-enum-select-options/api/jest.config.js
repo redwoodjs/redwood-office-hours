@@ -5,4 +5,6 @@ const config = {
   preset: '@redwoodjs/testing/config/jest/api',
 }
 
+if (process.env.DEBUG?.includes('wallaby')) config.runner = 'jest-runner'
+
 module.exports = config
