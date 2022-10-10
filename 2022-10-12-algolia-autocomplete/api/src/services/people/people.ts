@@ -3,7 +3,8 @@ import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 import { db } from 'src/lib/db'
 
 export const people: QueryResolvers['people'] = () => {
-  return db.person.findMany()
+  // We loaded 100,000 people so scaffold lists can't show them all
+  return db.person.findMany({ take: 100 })
 }
 
 export const person: QueryResolvers['person'] = ({ id }) => {

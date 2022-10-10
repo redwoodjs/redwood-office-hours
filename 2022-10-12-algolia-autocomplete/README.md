@@ -1,4 +1,4 @@
-# Algolia AutoComplete
+# How to Build an AutoComplete widget with RedwoodJS GraphQL API and Algolia UI Libraries
 
 Autocomplete is an open source, production-ready JavaScript library for building autocomplete experiences.
 
@@ -9,12 +9,112 @@ See: https://www.algolia.com/doc/ui-libraries/autocomplete/introduction/what-is-
 - @algolia/autocomplete-js
 - @algolia/autocomplete-theme-classic
 
+## Why
+
+Your application may need a way to find and navigate to a page, but you do not want to list out hundreds or thousands of items for the user to pick.
+
+You can instead let them search for a record and present them with matches to pick from.
+
+## Implementation
+
+- [Autocomplete Component](2022-10-12-algolia-autocomplete/web/src/components/Autocomplete/Autocomplete.tsx) - Implements the Algolgia widget as well as debounce helpers
+- [PersonAutocomplete Component](2022-10-12-algolia-autocomplete/web/src/components/PersonAutocomplete/PersonAutocomplete.tsx) - Defines the GraphQL query to search and what to render as results
+- [autocomplete SDL](2022-10-12-algolia-autocomplete/api/src/graphql/autocomplete.sdl.ts) and [service](2022-10-12-algolia-autocomplete/api/src/services/autocomplete/autocomplete.ts) - Defines the GraphQL API to search for people by postalAddress
+
+The SDL
+
+```javascript
+export const schema = gql`
+  input AutocompleteInput {
+    query: String!
+  }
+
+  type Query {
+    autocomplete(input: AutocompleteInput): [Person!]! @requireAuth
+  }
+`
+```
+
+defines the query used to search.
+
+The service
+
+```javascript
+export const autocomplete: QueryResolvers['autocomplete'] = ({ input }) => {
+  return db.person.findMany({
+    where: {
+      OR: [
+        { postalAddress: { contains: input.query, mode: 'insensitive' } },
+        { fullName: { contains: input.query, mode: 'insensitive' } },
+      ],
+    },
+    take: 10,
+    orderBy: { postalAddress: 'asc' },
+  })
+}
+```
+
+uses Prisma's `contains` filter to find `postalAddress`es or `fullName`s that contain the search query.
+
+We can leverage Postgres
+
+```SQL
+CREATE INDEX IF NOT EXISTS index_entity_on_fullname_like
+  ON "demo_algolia_autocomplete"."Person"
+  USING btree
+  ("fullName" COLLATE pg_catalog."default");
+
+
+CREATE INDEX IF NOT EXISTS index_entity_on_postal_address_like
+  ON "demo_algolia_autocomplete"."Person"
+  USING btree
+  ("postalAddress" COLLATE pg_catalog."default");
+```
+
+> Note: Debounce is uses to limit the API requests made while typing in the search so that it doesn't fire too often. There is a slight wait before the query is made after each keystroke.
+
+### Postgres Optimizations
+
+You can help optimize the "like" search by creating some indexes:
+
+```sql
+CREATE INDEX IF NOT EXISTS index_entity_on_fullname_like
+  ON "demo_algolia_autocomplete"."Person"
+  USING btree
+  ("fullName" COLLATE pg_catalog."default");
+
+
+CREATE INDEX IF NOT EXISTS index_entity_on_postal_address_like
+  ON "demo_algolia_autocomplete"."Person"
+  USING btree
+  ("postalAddress" COLLATE pg_catalog."default");
+```
+
+and also
+
+```sql
+CREATE EXTENSION IF NOT EXISTS pg_trgm;
+
+CREATE INDEX IF NOT EXISTS trgm_idx_person_postal_addreess ON "demo_algolia_autocomplete"."Person" USING gin ("postalAddress" gin_trgm_ops);
+
+CREATE INDEX IF NOT EXISTS trgm_idx_person_full_name ON "demo_algolia_autocomplete"."Person" USING gin ("fullName" gin_trgm_ops);
+```
+
+> The pg_trgm module provides functions and operators for determining the similarity of ASCII alphanumeric text based on trigram matching, as well as index operator classes that support fast searching for similar strings.
+
+Postgres uses trigrams to break down strings into smaller chunks and index them efficiently. The pg_trgm module supports GIST or GIN indexes and as of Postgres version 9.1 these indexes support LIKE/ILIKE queries.
+
 ## Setup
 
 - Setup Postgres (for collated index to help with search)
-- yarn rw db migrate
-- yarn prisma db seed for fake data
+- yarn rw db migrate dev
+- yarn prisma db seed for fake data (full name and postal addresses)
 - yarn rw dev
+
+## Use
+
+- Searches for postal address with 3 character limit and debounce
+- For example, search for countries
 
 ---
 
