@@ -1,5 +1,7 @@
 # How to Build an AutoComplete widget with RedwoodJS GraphQL API and Algolia UI Libraries
 
+👉 Demo: [https://rw-office-hours-algolia-autocomplete.netlify.app](https://rw-office-hours-algolia-autocomplete.netlify.app)
+
 Autocomplete is an open source, production-ready JavaScript library for building autocomplete experiences.
 
 A user types into an input, and the autocomplete “completes” their thought by providing full terms or results: this is the very base of an autocomplete experience.

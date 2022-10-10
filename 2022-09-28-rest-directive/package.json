@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@redwoodjs/core": "3.0.3",
-    "netlify-cli": "12.0.2",
+    "netlify-cli": "12.0.7",
     "prettier-plugin-tailwindcss": "0.1.13"
   },
   "eslintConfig": {
@@ -23,5 +23,5 @@
   "prisma": {
     "seed": "yarn rw exec seed"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.2.4"
 }
