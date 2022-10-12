@@ -10491,6 +10491,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"decamelize@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "decamelize@npm:6.0.0"
+  checksum: 689888f5ea39add843d79fb5a8d3bc1ce1df7583899bc7cef081c3deecd54758e24e8692f4c214e0ea6917742bb05ea1991e3e15c33031e7aa7b9041e8e8033a
+  languageName: node
+  linkType: hard
+
 "decimal.js@npm:^10.4.0, decimal.js@npm:^10.4.1":
   version: 10.4.1
   resolution: "decimal.js@npm:10.4.1"
@@ -14109,6 +14116,15 @@ __metadata:
   dependencies:
     decamelize: ^2.0.0
   checksum: a0ed69264b5069137afb369b46e18e8dbeb67edc7fb2ad1de18554108943e2fc59155f898013fb7a2f03522879adad7c9a93f1c88428844bcbee006c98db8f0a
+  languageName: node
+  linkType: hard
+
+"humanize-string@npm:3.0.0":
+  version: 3.0.0
+  resolution: "humanize-string@npm:3.0.0"
+  dependencies:
+    decamelize: ^6.0.0
+  checksum: 700d337913151a2f96949aa7d6afda7ab8254e4fd8790f79255ddd90dc53d49d6bd45ece122afbf310f9ec6bae11d3c6ca8b1fcd9220eb310f337254e27baf07
   languageName: node
   linkType: hard
 
