@@ -19,7 +19,7 @@ You can instead let them search for a record and present them with matches to pi
 
 ## Implementation
 
-- [Autocomplete Component](2022-10-12-algolia-autocomplete/web/src/components/Autocomplete/Autocomplete.tsx) - Implements the Algolgia widget as well as debounce helpers
+- [Autocomplete Component](2022-10-12-algolia-autocomplete/web/src/components/Autocomplete/Autocomplete.tsx) - Implements the Algolia widget as well as debounce helpers
 - [PersonAutocomplete Component](2022-10-12-algolia-autocomplete/web/src/components/PersonAutocomplete/PersonAutocomplete.tsx) - Defines the GraphQL query to search and what to render as results
 - [autocomplete SDL](2022-10-12-algolia-autocomplete/api/src/graphql/autocomplete.sdl.ts) and [service](2022-10-12-algolia-autocomplete/api/src/services/autocomplete/autocomplete.ts) - Defines the GraphQL API to search for people by postalAddress
 
@@ -115,7 +115,7 @@ Postgres uses trigrams to break down strings into smaller chunks and index them 
 
 ## Use
 
-- Searches for postal address with 3 character limit and debounce
+- Searches for postal address with 3 character limit and [debounce](https://www.algolia.com/doc/ui-libraries/autocomplete/guides/debouncing-sources/)
 - For example, search for countries
 
 ---

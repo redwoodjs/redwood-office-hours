@@ -27,6 +27,8 @@ const getPeople = ({ props }: { props: AutocompleteProps }) => {
 }
 
 const PersonAutocomplete = (criteria: Partial<AutocompleteProps>) => {
+  // useQuery ?
+
   const client = useApolloClient()
 
   return (
@@ -55,7 +57,7 @@ const PersonAutocomplete = (criteria: Partial<AutocompleteProps>) => {
                       to={routes.person({ id: item.id })}
                       className="text-md p-4 font-medium"
                     >
-                      <div> {item.fullName}</div>
+                      <div>Name is {item.fullName}</div>
                       <div className="font-sm text-gray-500">
                         {item.postalAddress}
                       </div>
