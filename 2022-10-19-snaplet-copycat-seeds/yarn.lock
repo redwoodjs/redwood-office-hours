@@ -4222,7 +4222,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snaplet/copycat@npm:^0.9.1":
+"@snaplet/copycat@npm:0.9.1":
   version: 0.9.1
   resolution: "@snaplet/copycat@npm:0.9.1"
   dependencies:
@@ -7328,7 +7328,7 @@ __metadata:
   dependencies:
     "@redwoodjs/api": 3.2.0
     "@redwoodjs/graphql-server": 3.2.0
-    "@snaplet/copycat": ^0.9.1
+    "@snaplet/copycat": 0.9.1
   languageName: unknown
   linkType: soft
 
