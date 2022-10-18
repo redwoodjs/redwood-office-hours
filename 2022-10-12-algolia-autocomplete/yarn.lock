@@ -12,53 +12,53 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-core@npm:1.7.1":
-  version: 1.7.1
-  resolution: "@algolia/autocomplete-core@npm:1.7.1"
+"@algolia/autocomplete-core@npm:1.7.2":
+  version: 1.7.2
+  resolution: "@algolia/autocomplete-core@npm:1.7.2"
   dependencies:
-    "@algolia/autocomplete-shared": 1.7.1
-  checksum: d94680f85436cd76734cdf29c74841c9f3af02479c0d5f1a5d172acaac146dbdd9bdb724968adda013018cf56b0b36dc5c1caef5ce3b4a73c36aab001a2cf074
+    "@algolia/autocomplete-shared": 1.7.2
+  checksum: 5214b2b6cd062b1750e12071f43725b08476c6ca27aa38e1bda0225cd2c57c374e1a451ae9ac0760e3af9e5805cede90ce6675f77c5020b0fd92a19eabde04f9
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-js@npm:1.7.1":
-  version: 1.7.1
-  resolution: "@algolia/autocomplete-js@npm:1.7.1"
+"@algolia/autocomplete-js@npm:1.7.2":
+  version: 1.7.2
+  resolution: "@algolia/autocomplete-js@npm:1.7.2"
   dependencies:
-    "@algolia/autocomplete-core": 1.7.1
-    "@algolia/autocomplete-preset-algolia": 1.7.1
-    "@algolia/autocomplete-shared": 1.7.1
+    "@algolia/autocomplete-core": 1.7.2
+    "@algolia/autocomplete-preset-algolia": 1.7.2
+    "@algolia/autocomplete-shared": 1.7.2
     htm: ^3.0.0
     preact: ^10.0.0
   peerDependencies:
-    "@algolia/client-search": ^4.5.1
-  checksum: 67a66ddbca394dd207330cfec9cc09ca78cce21e530412076828959fc5502a9747ae37239b9acc98f2264d9ab2fcd1a6c45a025a2f18c40f4edaad721440de36
+    "@algolia/client-search": ">= 4.5.1 < 6"
+  checksum: 7bb68dcaa006e10221173b16f4da5f0cb7ce885a260c809f8a5eddb121aa437e58fd8ee4ac62b63774dab7f530e8e842765667d908ef9002d9430135c28f9b56
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-preset-algolia@npm:1.7.1":
-  version: 1.7.1
-  resolution: "@algolia/autocomplete-preset-algolia@npm:1.7.1"
+"@algolia/autocomplete-preset-algolia@npm:1.7.2":
+  version: 1.7.2
+  resolution: "@algolia/autocomplete-preset-algolia@npm:1.7.2"
   dependencies:
-    "@algolia/autocomplete-shared": 1.7.1
+    "@algolia/autocomplete-shared": 1.7.2
   peerDependencies:
-    "@algolia/client-search": ^4.9.1
-    algoliasearch: ^4.9.1
-  checksum: 7eb422bf8f8b0e7c796c922f463472de00dae37713702ff9ca163a395944450443b52536a5ba3b5f745c1d05f1f43e7eccc67a563c175c17d68579bc2667f2d7
+    "@algolia/client-search": ">= 4.9.1 < 6"
+    algoliasearch: ">= 4.9.1 < 6"
+  checksum: 41748bbfa702265cb171647d7c97599516a629a9acd61f32e31a73cfb14bd280765447409139e0ee738b273094f762242e5705b8764cb7227f9014ab24e84cd2
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-shared@npm:1.7.1":
-  version: 1.7.1
-  resolution: "@algolia/autocomplete-shared@npm:1.7.1"
-  checksum: 0dd6f362203df1475d56c4b2b16e50549aa2f6740d929be424b1446f8104513c2608e17c9473bf3e016fedba3726b06cd023b1758f07c54fc6bdeeaf5919b322
+"@algolia/autocomplete-shared@npm:1.7.2":
+  version: 1.7.2
+  resolution: "@algolia/autocomplete-shared@npm:1.7.2"
+  checksum: 6a5215f2226cbb57de87b489520be141b6144f8c6fcc0dbb612cfd587ff29d351c0da85756d53f4e95faea2e987fc79778440dd20e87760753a0a7dc9f568287
   languageName: node
   linkType: hard
 
-"@algolia/autocomplete-theme-classic@npm:1.7.1":
-  version: 1.7.1
-  resolution: "@algolia/autocomplete-theme-classic@npm:1.7.1"
-  checksum: 1f64faf80528f6783bcc4f97509e8f5e1b8d21b33c2c68538aa94e62ceef00a004b7691754c34feb5ec7a2683f2635ec23dc02ec90a830c0c81dab58eff10534
+"@algolia/autocomplete-theme-classic@npm:1.7.2":
+  version: 1.7.2
+  resolution: "@algolia/autocomplete-theme-classic@npm:1.7.2"
+  checksum: 1f339485ca6d660b27ffdacbb2ad147dfb36996ef09d6c3fb87b00e179f22af2bcc8f168b301d346ee3479fd80daed956f8de70f22e18bd32878d37d7e13038f
   languageName: node
   linkType: hard
 
@@ -23784,8 +23784,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@algolia/autocomplete-js": 1.7.1
-    "@algolia/autocomplete-theme-classic": 1.7.1
+    "@algolia/autocomplete-js": 1.7.2
+    "@algolia/autocomplete-theme-classic": 1.7.2
     "@redwoodjs/forms": 3.1.1
     "@redwoodjs/router": 3.1.1
     "@redwoodjs/web": 3.1.1
