@@ -4255,14 +4255,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snaplet/copycat@npm:0.8.0":
-  version: 0.8.0
-  resolution: "@snaplet/copycat@npm:0.8.0"
+"@snaplet/copycat@npm:0.9.1":
+  version: 0.9.1
+  resolution: "@snaplet/copycat@npm:0.9.1"
   dependencies:
     "@faker-js/faker": ^6.2.0
-    fictional: ^0.6.0
+    fictional: ^0.7.2
     uuid: ^8.3.2
-  checksum: 4ef2b2daa13dbab6d16fe07fd7789dce694a1af2fe69f730eb050ac081b082121297b989c009d217ef44626e9386f82493082882f6516463e98e6ec2aa6aa0b9
+  checksum: 2001ec81a5f2dad0d896124121a8a398bf6d68d002b1e6a943274b9c06ab2e336952903e0c48076234bf4e8a35700d569ee03a7dae45633cbd3acdbf835ce903
   languageName: node
   linkType: hard
 
@@ -7400,7 +7400,7 @@ __metadata:
   dependencies:
     "@redwoodjs/api": 3.1.1
     "@redwoodjs/graphql-server": 3.1.1
-    "@snaplet/copycat": 0.8.0
+    "@snaplet/copycat": 0.9.1
   languageName: unknown
   linkType: soft
 
@@ -12479,14 +12479,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fictional@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "fictional@npm:0.6.0"
+"fictional@npm:^0.7.2":
+  version: 0.7.2
+  resolution: "fictional@npm:0.7.2"
   dependencies:
     decimal.js: ^10.4.0
     fast-json-stable-stringify: ^2.1.0
     md5: ^2.3.0
-  checksum: 8c73c82c3f8247c3aa992f92e57eb51f122fef29491ec6a7a11911617bf0c51461b15cfa41c1f6a13e08c8478a19662675d50efe407546bd4da35cb83ebc44f8
+  checksum: 24930d7cac3fcbd929d448a910156e83e415ad827579a2da93367ed48632550c3c45f5be7400dc6168829d373e2a9f6e606ef8993db104e43ca3de591929dcd9
   languageName: node
   linkType: hard
 
@@ -23790,7 +23790,7 @@ __metadata:
     "@redwoodjs/router": 3.1.1
     "@redwoodjs/web": 3.1.1
     autoprefixer: 10.4.12
-    humanize-string: 2.1.0
+    humanize-string: 3.0.0
     postcss: 8.4.18
     postcss-loader: 7.0.1
     prop-types: 15.8.1

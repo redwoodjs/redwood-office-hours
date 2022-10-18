@@ -7,6 +7,6 @@
     "@redwoodjs/graphql-server": "3.1.1"
   },
   "devDependencies": {
-    "@snaplet/copycat": "0.8.0"
+    "@snaplet/copycat": "0.9.1"
   }
 }
