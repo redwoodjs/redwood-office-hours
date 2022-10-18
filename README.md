@@ -13,6 +13,7 @@ This repo is where these demos and examples live.
 - [2022-09-28-rest-directive](2022-09-28-rest-directive/README.md) - How To build a REST directive with RedwoodJS Transformer Directives (2022-09-28)
 - [2022-10-05-enum-select-options](2022-10-05-enum-select-options/README.md) - # How To Use Human Readable Enums in a Form with a SelectList
 - [2022-10-12-algolia-autocomplete](2022-10-12-algolia-autocomplete/README.md) - How to Build an AutoComplete widget with RedwoodJS GraphQL API and Algolia UI Libraries
+- [2022-10-19-snaplet-copycat-seeds](2022-10-19-snaplet-copycat-seeds/README.md) - Seed deterministic data with Snaplet's Copycat
 
 ## Discord Invite Link
 
