@@ -4222,14 +4222,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snaplet/copycat@npm:0.11.0":
-  version: 0.11.0
-  resolution: "@snaplet/copycat@npm:0.11.0"
+"@snaplet/copycat@npm:0.11.1":
+  version: 0.11.1
+  resolution: "@snaplet/copycat@npm:0.11.1"
   dependencies:
     "@faker-js/faker": ^6.2.0
-    fictional: ^0.7.2
+    fictional: ^0.7.4
     uuid: ^8.3.2
-  checksum: d7bd93ff6b713cc20df31bb6751515fd35a73911887e42a835a8f614a3becbcf533c85fff797aedf8ca19f0e78010e238679409366adcec9a5d6ddd7f0e09a27
+  checksum: a831af07ce1fa7cc8509cf640d8d9c26abc10c464649f05bd732cbf496845a51bbd06d2decdceb2c595d50669dae8c33a470fb54040bb3b99f83976987f7daf5
   languageName: node
   linkType: hard
 
@@ -7328,7 +7328,7 @@ __metadata:
   dependencies:
     "@redwoodjs/api": 3.2.0
     "@redwoodjs/graphql-server": 3.2.0
-    "@snaplet/copycat": 0.11.0
+    "@snaplet/copycat": 0.11.1
   languageName: unknown
   linkType: soft
 
@@ -12286,14 +12286,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fictional@npm:^0.7.2":
-  version: 0.7.2
-  resolution: "fictional@npm:0.7.2"
+"fictional@npm:^0.7.4":
+  version: 0.7.4
+  resolution: "fictional@npm:0.7.4"
   dependencies:
     decimal.js: ^10.4.0
     fast-json-stable-stringify: ^2.1.0
     md5: ^2.3.0
-  checksum: 24930d7cac3fcbd929d448a910156e83e415ad827579a2da93367ed48632550c3c45f5be7400dc6168829d373e2a9f6e606ef8993db104e43ca3de591929dcd9
+  checksum: 148e7aa2a54737b60bb42f5a12d9b38233750d749d8d54d04c31d1f6fd565dc07f7ee92a7a0942c91912e4944e94dca12aa685e1374ff98523ba01fe295fc2f6
   languageName: node
   linkType: hard
 
