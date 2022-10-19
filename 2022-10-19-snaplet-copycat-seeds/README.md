@@ -94,7 +94,7 @@ For more information on Prisma seeding, see Prisma's guide [Seeding your databas
 
 Seed data should be small and purposeful, so that it is quick to run on migrations and database resets.
 
-For larger datasets, use a separate script to seed the database suing a CSV file and Postgres's COPY command
+For larger datasets, use a separate script to seed the database using a CSV file and Postgres's COPY command
 
 ## Our Schema
 
