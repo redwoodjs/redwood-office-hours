@@ -1,6 +1,7 @@
 import type { Prisma, Profile } from '@prisma/client'
 import { db } from 'api/src/lib/db'
 import { copycat, fictional } from '@snaplet/copycat'
+import { user, profile, post } from 'api/src/lib/makers'
 
 /**
  * Seed the database with some Users, Profiles, and Posts
@@ -23,10 +24,6 @@ const RECORDS_TO_SEED = 100
  *
  */
 const seedUsers = async () => {
-  const user = fictional.shape({
-    email: copycat.email,
-  })
-
   const data: Prisma.UserCreateArgs['data'][] = copycat.times(
     `user`,
     RECORDS_TO_SEED,
@@ -46,31 +43,6 @@ const seedUsers = async () => {
  *
  */
 const seedProfiles = async (users) => {
-  const company = fictional.join(' ', [
-    copycat.word,
-    copycat.oneOf([
-      'Inc.',
-      'Incorporated',
-      'Ltd.',
-      'Corp.',
-      'Corporation',
-      'Systems',
-    ]),
-  ])
-
-  const profile = fictional.shape({
-    firstName: copycat.firstName,
-    lastName: copycat.lastName,
-    bio: copycat.paragraph.options({ minSentences: 2, maxSentences: 3 }),
-    dateOfBirth: copycat.dateString.options({ minYear: 1970, maxYear: 2000 }),
-    phoneNumber: copycat.phoneNumber,
-    company: company,
-    postalAddress: copycat.postalAddress,
-    membershipLevel: copycat.oneOf(['free', 'monthly', 'annual']),
-    numberOfPostsRead: copycat.int.options({ min: 0, max: 20 }),
-    timezone: copycat.timezone,
-  })
-
   const data = copycat.times(`profile`, users.length, profile)
 
   const profiles = Promise.all(
@@ -95,13 +67,6 @@ const seedProfiles = async (users) => {
  *
  */
 const seedPosts = async (profiles) => {
-  const post = fictional.shape({
-    title: copycat.sentence.options({ minWords: 3, maxWords: 5 }),
-    content: copycat.paragraph.options({ minSentences: 2, maxSentences: 3 }),
-    published: copycat.bool,
-    tags: copycat.someOf([2, 3], [`tech`, `life`, `music`, `art`, `science`]),
-  })
-
   const posts: Prisma.PostCreateArgs['data'][] = copycat.times(
     `post`,
     RECORDS_TO_SEED,
