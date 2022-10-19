@@ -1,7 +1,6 @@
 import type { Prisma, Profile } from '@prisma/client'
 import { db } from 'api/src/lib/db'
-import { copycat } from '@snaplet/copycat'
-import { shape, oneOf } from 'fictional'
+import { copycat, fictional } from '@snaplet/copycat'
 
 /**
  * Seed the database with some Users, Profiles, and Posts
@@ -24,7 +23,7 @@ const RECORDS_TO_SEED = 20
  *
  */
 const seedUsers = async () => {
-  const user = shape({
+  const user = fictional.shape({
     email: copycat.email,
   })
 
@@ -47,12 +46,25 @@ const seedUsers = async () => {
  *
  */
 const seedProfiles = async (users) => {
-  const profile = shape({
+  const company = fictional.join(' ', [
+    copycat.word,
+    copycat.oneOf([
+      'Inc.',
+      'Incorporated',
+      'Ltd.',
+      'Corp.',
+      'Corporation',
+      'Systems',
+    ]),
+  ])
+
+  const profile = fictional.shape({
     firstName: copycat.firstName,
     lastName: copycat.lastName,
     bio: copycat.paragraph.options({ min: 2, max: 3 }),
     dateOfBirth: copycat.dateString.options({ minYear: 1970, maxYear: 2000 }),
     phoneNumber: copycat.phoneNumber,
+    company: company,
     postalAddress: copycat.postalAddress,
     membershipLevel: copycat.oneOf(['free', 'monthly', 'annual']),
     numberOfPostsRead: copycat.int.options({ min: 0, max: 20 }),
@@ -83,7 +95,7 @@ const seedProfiles = async (users) => {
  *
  */
 const seedPosts = async (profiles) => {
-  const post = shape({
+  const post = fictional.shape({
     title: copycat.sentence.options({ min: 3, max: 5 }),
     content: copycat.paragraph.options({ min: 2, max: 3 }),
     published: copycat.bool,

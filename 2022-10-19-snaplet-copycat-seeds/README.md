@@ -98,7 +98,7 @@ For larger datasets, use a separate script to seed the database suing a CSV file
 
 ## Our Schema
 
-We'll be using Postgres so that we can seed various datatypes, such as arrays that SQLite cannot.
+We'll be using Postgres so that we can seed various data types, such as arrays that SQLite cannot.
 
 This will also let us use [`createMany`](https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#createmany) to bulk add and skip duplicate data to speed up seeding when the data doesn't require relations (such as Users).
 
@@ -115,7 +115,7 @@ yarn workspace api add @snaplet/copycat
 First, we create a `shape` that matches the model's required fields:
 
 ```js
-const profile = shape({
+const profile = fictional.shape({
   firstName: copycat.firstName,
   lastName: copycat.lastName,
   bio: copycat.paragraph.options({ min: 2, max: 3 }),
@@ -128,9 +128,11 @@ const profile = shape({
 })
 ```
 
+Note: [`fictional`](https://github.com/oftherivier/fictional) is exported by `copycat` and is the underlying library that generates fake data deterministically from a given input. you can use its composition methods to construct your own makers.
+
 Here we use copycat to generate names, several paragraphs of text for a biography, a date of birth that ensures they are 22 years and older, a phone number, an address, how many posts they have read, their timezone, and a membership level from a set of options.
 
-Then, we'll use `times` to generate several profiles each with distinct, but determinisic data:
+Then, we'll use `times` to generate several profiles each with distinct, but deterministic data:
 
 ```js
 const data = copycat.times(`profile`, 10, profile)
@@ -143,7 +145,7 @@ and then load using Prisma's create or createMany as needed.
 - Seed scripts should be run over and over gracefully handle existing data
 - Seed scripts should be small and run quickly.
 - Seeds scripts are not data load scripts. They are intended to standup development environments
-- If you need bulk loading, consider using separate `exec` scro[ts] that can bulk load production data using Postgres COPY and CSV files.
+- If you need bulk loading, consider using separate `exec` scripts that can bulk load production data using Postgres COPY and CSV files.
 - SQLite vs Postgres, createMany vs individual promises. Limitations on nested write in createMany.
 
 ## Other Use Cases for 🐱 copycat

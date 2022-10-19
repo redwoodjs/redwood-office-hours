@@ -33,6 +33,7 @@ model Profile {
   bio               String
   dateOfBirth       DateTime?
   phoneNumber       String
+  company           String
   postalAddress     String
   membershipLevel   String[]
   timezone          String
