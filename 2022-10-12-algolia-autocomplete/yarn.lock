@@ -4298,14 +4298,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snaplet/copycat@npm:0.9.1":
-  version: 0.9.1
-  resolution: "@snaplet/copycat@npm:0.9.1"
+"@snaplet/copycat@npm:0.11.0":
+  version: 0.11.0
+  resolution: "@snaplet/copycat@npm:0.11.0"
   dependencies:
     "@faker-js/faker": ^6.2.0
     fictional: ^0.7.2
     uuid: ^8.3.2
-  checksum: 2001ec81a5f2dad0d896124121a8a398bf6d68d002b1e6a943274b9c06ab2e336952903e0c48076234bf4e8a35700d569ee03a7dae45633cbd3acdbf835ce903
+  checksum: d7bd93ff6b713cc20df31bb6751515fd35a73911887e42a835a8f614a3becbcf533c85fff797aedf8ca19f0e78010e238679409366adcec9a5d6ddd7f0e09a27
   languageName: node
   linkType: hard
 
@@ -7408,7 +7408,7 @@ __metadata:
   dependencies:
     "@redwoodjs/api": 3.2.0
     "@redwoodjs/graphql-server": 3.2.0
-    "@snaplet/copycat": 0.9.1
+    "@snaplet/copycat": 0.11.0
   languageName: unknown
   linkType: soft
 
