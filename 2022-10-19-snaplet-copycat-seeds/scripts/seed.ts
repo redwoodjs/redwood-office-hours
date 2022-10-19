@@ -16,7 +16,7 @@ import { copycat, fictional } from '@snaplet/copycat'
 //
 // For larger datasets, use a separate script to seed the database suing a CSV file
 // and Postgres's COPY command
-const RECORDS_TO_SEED = 20
+const RECORDS_TO_SEED = 100
 
 /**
  * Seeds users with Prisma's createMany
@@ -61,7 +61,7 @@ const seedProfiles = async (users) => {
   const profile = fictional.shape({
     firstName: copycat.firstName,
     lastName: copycat.lastName,
-    bio: copycat.paragraph.options({ min: 2, max: 3 }),
+    bio: copycat.paragraph.options({ minSentences: 2, maxSentences: 3 }),
     dateOfBirth: copycat.dateString.options({ minYear: 1970, maxYear: 2000 }),
     phoneNumber: copycat.phoneNumber,
     company: company,
@@ -96,8 +96,8 @@ const seedProfiles = async (users) => {
  */
 const seedPosts = async (profiles) => {
   const post = fictional.shape({
-    title: copycat.sentence.options({ min: 3, max: 5 }),
-    content: copycat.paragraph.options({ min: 2, max: 3 }),
+    title: copycat.sentence.options({ minWords: 3, maxWords: 5 }),
+    content: copycat.paragraph.options({ minSentences: 2, maxSentences: 3 }),
     published: copycat.bool,
     tags: copycat.someOf([2, 3], [`tech`, `life`, `music`, `art`, `science`]),
   })

@@ -94,7 +94,7 @@ For more information on Prisma seeding, see Prisma's guide [Seeding your databas
 
 Seed data should be small and purposeful, so that it is quick to run on migrations and database resets.
 
-For larger datasets, use a separate script to seed the database suing a CSV file and Postgres's COPY command
+For larger datasets, use a separate script to seed the database using a CSV file and Postgres's COPY command
 
 ## Our Schema
 
@@ -154,6 +154,14 @@ and then load using Prisma's create or createMany as needed.
 - Tests and Storybook that use mocks
 - Scenario data
 - Seeding dbAuth User and Passwords
+
+## What about seeding with CSV files?
+
+While you can absolutely read CSV (or JSON) files in your seed script and then do a `createMany`, you may need to batch on chumks in the case there are 10,000's or more records.
+
+Or, you can use Postgres COPY to load.
+
+See: `2022-10-19-snaplet-copycat-seeds/scripts/seed_world_cities.ts` for an example script and shell script to load CSV data for ~43,000 world cities from CSV.
 
 ---
 
