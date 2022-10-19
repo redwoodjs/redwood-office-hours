@@ -40,3 +40,25 @@ model Profile {
   posts             Post[]
   numberOfPostsRead Int       @default(0)
 }
+
+model WorldCity {
+  city         String
+  cityAscii    String
+  lat          Float
+  lng          Float
+  country      String
+  iso2         String
+  iso3         String
+  adminName    String?
+  capital      String?
+  population   Decimal? @default(0)
+  simpleMapsId BigInt   @unique
+
+  @@unique([simpleMapsId, city])
+  @@unique([simpleMapsId, city, cityAscii, country])
+  @@index([city])
+  @@index([cityAscii])
+  @@index([country])
+  @@index([city, country])
+  @@index([cityAscii, country])
+}

@@ -155,6 +155,14 @@ and then load using Prisma's create or createMany as needed.
 - Scenario data
 - Seeding dbAuth User and Passwords
 
+## What about seeding with CSV files?
+
+While you can absolutely read CSV (or JSON) files in your seed script and then do a `createMany`, you may need to batch on chumks in the case there are 10,000's or more records.
+
+Or, you can use Postgres COPY to load.
+
+See: `2022-10-19-snaplet-copycat-seeds/scripts/seed_world_cities.ts` for an example script and shell script to load CSV data for ~43,000 world cities from CSV.
+
 ---
 
 # README
