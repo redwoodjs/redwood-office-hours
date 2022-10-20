@@ -1,7 +1,7 @@
 import type { Prisma, Profile } from '@prisma/client'
 import { db } from 'api/src/lib/db'
 import { copycat, fictional } from '@snaplet/copycat'
-import { user, profile, post } from 'api/src/lib/makers'
+import { user, profile, makePost } from 'api/src/lib/makers'
 
 /**
  * Seed the database with some Users, Profiles, and Posts
@@ -70,7 +70,7 @@ const seedPosts = async (profiles) => {
   const posts: Prisma.PostCreateArgs['data'][] = copycat.times(
     `post`,
     RECORDS_TO_SEED,
-    post
+    makePost
   )
 
   Promise.all(
