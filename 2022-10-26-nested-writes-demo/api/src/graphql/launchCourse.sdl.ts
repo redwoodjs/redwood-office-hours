@@ -2,6 +2,7 @@ export const schema = gql`
   input StudentEnrollInput {
     id: Int!
   }
+
   input LaunchCourseInput {
     course: CreateCourseInput!
     studentIds: [StudentEnrollInput!]!
