@@ -1,3 +1,26 @@
+# How to Generate OG Images for Social Cards using Netlify Edge Functions and RedwoodJS MetaTags
+
+This is a demo project demonstrating the use of the [RedwoodJS framework](https://redwoodjs.com/) and Netlify [Edge Functions](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/).
+
+This project uses an Edge Function to determine your [geolocation](https://docs.netlify.com/netlify-labs/experimental-features/edge-functions/api/#netlify-specific-context-object), and then fetches your local weather forecast using the OpenWeather API using a standard [serverless function](https://redwoodjs.com/docs/serverless-functions).
+
+## Demo
+
+You may demo this app at ...
+
+## Requirements
+
+- A Netlify account. Sign up for free [here](https://app.netlify.com/signup).
+- A Postgres database. You can either set one up locally, or use [Railway](https://railway.app/) to provision a temporary one.
+
+## Local development
+
+Run with `netlify dev` locally instead of `yarn rw dev` to test Netlify Edge Functions.
+
+Note: If editing code while running `netlify dev`, the API server will try to restart but may get a warning that port is in use. You will need to stop and restart `netlify dev` manually.
+
+---
+
 # README
 
 Welcome to [RedwoodJS](https://redwoodjs.com)!
@@ -27,9 +50,11 @@ Your browser should automatically open to http://localhost:8910 where you'll see
 > Congratulations on running your first Redwood CLI command!
 > From dev to deploy, the CLI is with you the whole way.
 > And there's quite a few commands at your disposal:
+>
 > ```
 > yarn redwood --help
 > ```
+>
 > For all the details, see the [CLI reference](https://redwoodjs.com/docs/cli-commands).
 
 ## Prisma and the database
@@ -94,7 +119,7 @@ Redwood fully integrates Jest with the front and the backends and makes it easy 
 yarn rw test
 ```
 
-To make the integration even more seamless, Redwood augments Jest with database [scenarios](https://redwoodjs.com/docs/testing.md#scenarios)  and [GraphQL mocking](https://redwoodjs.com/docs/testing.md#mocking-graphql-calls).
+To make the integration even more seamless, Redwood augments Jest with database [scenarios](https://redwoodjs.com/docs/testing.md#scenarios) and [GraphQL mocking](https://redwoodjs.com/docs/testing.md#mocking-graphql-calls).
 
 ## Ship it
 
