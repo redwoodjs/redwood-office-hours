@@ -20413,7 +20413,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
+"micromatch@npm:^4.0.2, micromatch@npm:^4.0.4, micromatch@npm:^4.0.5":
   version: 4.0.5
   resolution: "micromatch@npm:4.0.5"
   dependencies:
@@ -26705,9 +26705,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:3.2.0":
-  version: 3.2.0
-  resolution: "tailwindcss@npm:3.2.0"
+"tailwindcss@npm:3.2.1":
+  version: 3.2.1
+  resolution: "tailwindcss@npm:3.2.1"
   dependencies:
     arg: ^5.0.2
     chokidar: ^3.5.3
@@ -26719,6 +26719,7 @@ __metadata:
     glob-parent: ^6.0.2
     is-glob: ^4.0.3
     lilconfig: ^2.0.6
+    micromatch: ^4.0.5
     normalize-path: ^3.0.0
     object-hash: ^3.0.0
     picocolors: ^1.0.0
@@ -26736,7 +26737,7 @@ __metadata:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: d893e9859fd895bab497bd1d65ba51cd0c22cc7e29237a639b3b1083ac35ccb23f3887830d26a9fa447f9d3a6a0cb9b84af631a287e2619a5a18338043465c25
+  checksum: 87f372c6036a53c4cfcb32e098f8b329f8c59cca8e30f29ca16ef4338b212f6a0665dc1e6be61e76f0b570a14df935059da9106858772755ec1fca479af652ea
   languageName: node
   linkType: hard
 
@@ -28503,7 +28504,7 @@ __metadata:
     prop-types: 15.8.1
     react: 17.0.2
     react-dom: 17.0.2
-    tailwindcss: 3.2.0
+    tailwindcss: 3.2.1
   languageName: unknown
   linkType: soft
 
