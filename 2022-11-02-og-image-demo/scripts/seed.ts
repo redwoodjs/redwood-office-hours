@@ -3,61 +3,79 @@ import { db } from 'api/src/lib/db'
 
 export default async () => {
   try {
-    //
-    // Manually seed via `yarn rw prisma db seed`
-    // Seeds automatically with `yarn rw prisma migrate dev` and `yarn rw prisma migrate reset`
-    //
-    // Update "const data = []" to match your data model and seeding needs
-    //
-    const data: Prisma.UserExampleCreateArgs['data'][] = [
-      // To try this example data with the UserExample model in schema.prisma,
-      // uncomment the lines below and run 'yarn rw prisma migrate dev'
-      //
-      // { name: 'alice', email: 'alice@example.com' },
-      // { name: 'mark', email: 'mark@example.com' },
-      // { name: 'jackie', email: 'jackie@example.com' },
-      // { name: 'bob', email: 'bob@example.com' },
+    const data: Prisma.ImageCreateArgs['data'][] = [
+      {
+        name: 'Custom-font',
+        description: 'Custom-font',
+        path: '/og/custom-font',
+        src: '/og/custom-font',
+      },
+      {
+        name: 'dynamic-image',
+        description: 'dynamic-image',
+        path: '/og/dynamic-image',
+        src: '/og/dynamic-image',
+      },
+      { name: 'Emoji', description: '', path: '/og/emoji', src: '/og/emoji' },
+      {
+        name: 'Image-svg',
+        description: 'Image-svg',
+        path: '/og/image-svg',
+        src: '/og/image-svg',
+      },
+      {
+        name: 'Language',
+        description: 'Language',
+        path: '/og/language',
+        src: '/og/language',
+      },
+      {
+        name: 'Param Default',
+        description: 'Param Default',
+        path: '/og/param',
+        src: '/og/param',
+      },
+      {
+        name: 'Param with Title',
+        description: 'Param with Title',
+        path: '/og/param',
+        src: '/og/param?title=Vercel',
+      },
+      {
+        name: 'Static',
+        description: 'Static',
+        path: '/og/static',
+        src: '/og/static',
+      },
+      {
+        name: 'Tailwind',
+        description: 'Tailwind',
+        path: '/og/tailwind',
+        src: '/og/tailwind',
+      },
+      {
+        name: 'Splat/*',
+        description: 'Splat/*',
+        path: '/og/splat/splat/*',
+        src: '/og/splat/books/123',
+      },
+      {
+        name: 'Pokemon',
+        description: 'Pokemon',
+        path: '/og/pokemon',
+        src: '/og/pokemon',
+      },
+      {
+        name: 'Pokemon with Splat',
+        description: 'Pokemon with Splat',
+        path: '/og/pokemon/p/*',
+        src: '/og/pokemon/p/bulbasaur',
+      },
     ]
-    console.log(
-      "\nUsing the default './scripts/seed.{js,ts}' template\nEdit the file to add seed data\n"
-    )
 
-    // Note: if using PostgreSQL, using `createMany` to insert multiple records is much faster
-    // @see: https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#createmany
-    Promise.all(
-      //
-      // Change to match your data model and seeding needs
-      //
-      data.map(async (data: Prisma.UserExampleCreateArgs['data']) => {
-        const record = await db.userExample.create({ data })
-        console.log(record)
-      })
-    )
-
-    // If using dbAuth and seeding users, you'll need to add a `hashedPassword`
-    // and associated `salt` to their record. Here's how to create them using
-    // the same algorithm that dbAuth uses internally:
-    //
-    //   import { hashPassword } from '@redwoodjs/api'
-    //
-    //   const users = [
-    //     { name: 'john', email: 'john@example.com', password: 'secret1' },
-    //     { name: 'jane', email: 'jane@example.com', password: 'secret2' }
-    //   ]
-    //
-    //   for (user of users) {
-    //     const [hashedPassword, salt] = hashPassword(user.password)
-    //     await db.user.create({
-    //       data: {
-    //         name: user.name,
-    //         email: user.email,
-    //         hashedPassword,
-    //         salt
-    //       }
-    //     })
-    //   }
+    await db.image.createMany({ data })
   } catch (error) {
-    console.warn('Please define your seed data.')
+    console.warn('Error with seed data.')
     console.error(error)
   }
 }
