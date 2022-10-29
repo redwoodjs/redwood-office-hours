@@ -19,7 +19,21 @@ Run with `netlify dev` locally instead of `yarn rw dev` to test Netlify Edge Fun
 
 Note: If editing code while running `netlify dev`, the API server will try to restart but may get a warning that port is in use. You will need to stop and restart `netlify dev` manually.
 
-### Demos
+### Generate Netlify toml
+
+Script to auto-generate the netlify.toml with the edge function configuration.
+
+```
+yarn netlify-toml
+```
+
+or
+
+```
+yarn rw exec og-edge-function-toml
+```
+
+## Demos
 
 - basic
 - params

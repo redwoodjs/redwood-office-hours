@@ -4,6 +4,7 @@ export const schema = gql`
     name: String!
     description: String!
     path: String!
+    function: String!
     src: String!
   }
 
@@ -16,6 +17,7 @@ export const schema = gql`
     name: String!
     description: String!
     path: String!
+    function: String!
     src: String!
   }
 
@@ -23,6 +25,7 @@ export const schema = gql`
     name: String
     description: String
     path: String
+    function: String
     src: String
   }
 

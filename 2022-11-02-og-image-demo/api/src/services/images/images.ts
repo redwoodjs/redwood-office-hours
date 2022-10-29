@@ -3,7 +3,7 @@ import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 import { db } from 'src/lib/db'
 
 export const images: QueryResolvers['images'] = () => {
-  return db.image.findMany()
+  return db.image.findMany({ orderBy: { name: 'asc' } })
 }
 
 export const image: QueryResolvers['image'] = ({ id }) => {

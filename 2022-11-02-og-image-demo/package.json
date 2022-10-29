@@ -23,5 +23,8 @@
   "prisma": {
     "seed": "yarn rw exec seed"
   },
+  "scripts": {
+    "netlify-toml": "yarn rw exec og-edge-function-toml"
+  },
   "packageManager": "yarn@3.2.3"
 }

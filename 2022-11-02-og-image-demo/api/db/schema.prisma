@@ -12,6 +12,7 @@ model Image {
   id          Int    @id @default(autoincrement())
   name        String @unique
   description String
+  function    String
   path        String
   src         String
 }
