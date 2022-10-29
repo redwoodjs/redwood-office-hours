@@ -1,16 +1,17 @@
 import React from 'https://esm.sh/react@18.2.0'
 import { ImageResponse } from 'https://deno.land/x/og_edge/mod.ts'
+import { Context } from 'https://edge.netlify.com'
 
-export default async function handler(req: Request) {
-  console.log(req.url)
+export default async function handler(req: Request, context: Context) {
+  context.log(req.url)
 
-  const pattern = new URLPattern('http{s}?://*:*/og-params/books/:id')
-  console.log(pattern)
+  const pattern = new URLPattern('http{s}?://*:*/*/books/:id')
+  context.log(pattern)
 
   let match = pattern.exec(req.url)
 
-  console.log(match)
-  console.log(match.pathname.groups.id.toString())
+  context.log(match)
+  context.log(match.pathname.groups.id.toString())
 
   return new ImageResponse(
     (

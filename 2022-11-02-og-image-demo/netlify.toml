@@ -26,26 +26,49 @@
   to = "/og"
   status = 200
 
-#[[edge_functions]]
-#path = "/.netlify/functions/graphql"
-#function = "geolocate"
-
-#[[edge_functions]]
-#path = "/.netlify/functions/weather"
-#function = "geolocate"
+# Standard Classic Examples
+[[edge_functions]]
+function = "custom-font"
+path = "/og/custom-font"
 
 [[edge_functions]]
-function = "og"
-path = "/og"
+function = "dynamic-image"
+path = "/og/dynamic-image"
 
 [[edge_functions]]
-function = "og_params"
-path = "/og-params/*"
+function = "emoji"
+path = "/og/emoji"
 
 [[edge_functions]]
-function = "og_pokemon"
-path = "/og-pokemon"
+function = "image-svg"
+path = "/og/image-svg"
 
 [[edge_functions]]
-function = "og_pokemon"
-path = "/og-pokemon/p/*"
+function = "language"
+path = "/og/language"
+
+[[edge_functions]]
+function = "param"
+path = "/og/param"
+
+[[edge_functions]]
+function = "static"
+path = "/og/static"
+
+[[edge_functions]]
+function = "tailwind"
+path = "/og/tailwind"
+
+## Custom Examples
+[[edge_functions]]
+function = "splat"
+path = "/og/splat/*"
+
+[[edge_functions]]
+function = "pokemon"
+path = "/og/pokemon"
+
+[[edge_functions]]
+function = "pokemon"
+path = "/og/pokemon/p/*"
+

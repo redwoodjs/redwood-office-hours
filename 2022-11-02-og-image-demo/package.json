@@ -9,7 +9,8 @@
   },
   "devDependencies": {
     "@redwoodjs/core": "3.2.1",
-    "netlify-cli": "12.0.11"
+    "netlify-cli": "12.0.11",
+    "prettier-plugin-tailwindcss": "^0.1.13"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",

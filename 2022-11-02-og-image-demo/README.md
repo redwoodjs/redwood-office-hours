@@ -19,6 +19,26 @@ Run with `netlify dev` locally instead of `yarn rw dev` to test Netlify Edge Fun
 
 Note: If editing code while running `netlify dev`, the API server will try to restart but may get a warning that port is in use. You will need to stop and restart `netlify dev` manually.
 
+### Demos
+
+- basic
+- params
+- splats
+- pokemon
+- world current time
+- fetch from graphql
+- custom font
+- emoji example
+- Tailwind
+- encrypted example https://vercel.com/docs/concepts/functions/edge-functions/og-image-examples#encrypting-parameters
+- chain edge to do geolocate
+
+## Satori Info
+
+- https://github.com/vercel/satori
+- Supported elements and preset styles https://github.com/vercel/satori/blob/main/src/handler/presets.ts
+- Supported CSS https://github.com/vercel/satori#css
+
 ---
 
 # README

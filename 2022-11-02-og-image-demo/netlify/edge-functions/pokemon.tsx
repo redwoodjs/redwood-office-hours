@@ -1,5 +1,6 @@
 import React from 'https://esm.sh/react@18.2.0'
 import { ImageResponse } from 'https://deno.land/x/og_edge/mod.ts'
+import { Context } from 'https://edge.netlify.com'
 
 const errorImage = new ImageResponse(
   (
@@ -21,7 +22,7 @@ const errorImage = new ImageResponse(
   )
 )
 
-export default async function handler(req: Request) {
+export default async function handler(req: Request, context: Context) {
   const DEFAULT_POKEMON = 'pikachu'
   const POKEMON_PATTERN = new URLPattern({ pathname: '/*/p/:pokemonName' })
 
@@ -58,7 +59,7 @@ export default async function handler(req: Request) {
                 padding: 16,
               }}
             >
-              <img src={data.sprites.front_default} />
+              <img src={data.sprites.front_default} height="320" />
               {data.species.name}
             </section>
           )
