@@ -2,7 +2,7 @@ import React from 'https://esm.sh/react@18.2.0'
 import { ImageResponse } from 'https://deno.land/x/og_edge/mod.ts'
 import { Context } from 'https://edge.netlify.com'
 
-export default function handler() {
+export default async () => {
   return new ImageResponse(
     (
       <div

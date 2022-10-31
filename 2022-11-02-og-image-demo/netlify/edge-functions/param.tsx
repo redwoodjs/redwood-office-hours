@@ -2,9 +2,9 @@ import React from 'https://esm.sh/react@18.2.0'
 import { ImageResponse } from 'https://deno.land/x/og_edge/mod.ts'
 import { Context } from 'https://edge.netlify.com'
 
-export default function handler(req: Request) {
+export default async (request: Request) => {
   try {
-    const { searchParams } = new URL(req.url)
+    const { searchParams } = new URL(request.url)
 
     // ?title=<title>
     const hasTitle = searchParams.has('title')

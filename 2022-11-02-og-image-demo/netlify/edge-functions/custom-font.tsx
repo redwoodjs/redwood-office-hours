@@ -6,7 +6,7 @@ const font = fetch(
   'https://deno.land/x/og_edge@0.0.1/assets/TYPEWR__.TTF'
 ).then((res) => res.arrayBuffer())
 
-export default async function handler() {
+export default async () => {
   const fontData = await font
 
   return new ImageResponse(

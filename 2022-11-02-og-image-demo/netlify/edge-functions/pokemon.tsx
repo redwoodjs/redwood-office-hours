@@ -22,14 +22,14 @@ const errorImage = new ImageResponse(
   )
 )
 
-export default async function handler(req: Request, context: Context) {
+export default async (request: Request, context: Context) => {
   const DEFAULT_POKEMON = 'pikachu'
   const POKEMON_PATTERN = new URLPattern({ pathname: '/*/p/:pokemonName' })
 
   try {
     const pokemonName =
       POKEMON_PATTERN.exec(
-        req.url
+        request.url
       )?.pathname?.groups?.pokemonName?.toLowerCase() || DEFAULT_POKEMON
 
     const image = fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)

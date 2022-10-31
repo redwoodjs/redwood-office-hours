@@ -113,6 +113,11 @@ path = "/og/static"
 function = "tailwind"
 path = "/og/tailwind"
 
+# Example for Encrypted - Encrypted params with presigned params
+[[edge_functions]]
+function = "encrypted"
+path = "/og/encrypted"
+
 # Example for Splat/* - Splat
 [[edge_functions]]
 function = "splat"

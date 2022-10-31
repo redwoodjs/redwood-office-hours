@@ -2,8 +2,8 @@ import React from 'https://esm.sh/react@18.2.0'
 import { ImageResponse } from 'https://deno.land/x/og_edge/mod.ts'
 import { Context } from 'https://edge.netlify.com'
 
-export default function handler(req: Request) {
-  const { searchParams } = new URL(req.url)
+export default (request: Request) => {
+  const { searchParams } = new URL(request.url)
   const username = searchParams.get('username')
 
   return new ImageResponse(

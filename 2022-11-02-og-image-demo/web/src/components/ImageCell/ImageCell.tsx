@@ -2,8 +2,7 @@ import type { FindImageQuery, FindImageQueryVariables } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import { MetaTags } from '@redwoodjs/web'
-import { routes } from '@redwoodjs/router'
-
+import { ogImageUrl, ogImageContentUrl } from 'src/lib/seo'
 import Image from 'src/components/Image/Image'
 
 export const QUERY = gql`
@@ -32,27 +31,13 @@ export const Failure = ({
 export const Success = ({
   image,
 }: CellSuccessProps<FindImageQuery, FindImageQueryVariables>) => {
-  let canonicalBaseUrl = process.env.URL
-
-  if (process.env.NETLIFY === 'true') {
-    if (process.env.branch === 'main') {
-      canonicalBaseUrl = process.env.URL
-    } else {
-      canonicalBaseUrl = process.env.DEPLOY_URL
-    }
-  }
-
-  const ogUrl = `${canonicalBaseUrl}${routes.image({
-    id: image.id,
-  })}` as 'http://${string}' | 'https://${string}'
-  const ogContentUrl = `${canonicalBaseUrl}${image.src}`
   return (
     <>
       <MetaTags
         title={image.name}
         description={image.description}
-        ogUrl={ogUrl}
-        ogContentUrl={ogContentUrl}
+        ogUrl={ogImageUrl(image)}
+        ogContentUrl={ogImageContentUrl(image)}
       />
       <Image image={image} />
     </>
