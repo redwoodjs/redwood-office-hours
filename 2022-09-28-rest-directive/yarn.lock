@@ -9002,12 +9002,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:10.4.12":
-  version: 10.4.12
-  resolution: "autoprefixer@npm:10.4.12"
+"autoprefixer@npm:10.4.13":
+  version: 10.4.13
+  resolution: "autoprefixer@npm:10.4.13"
   dependencies:
     browserslist: ^4.21.4
-    caniuse-lite: ^1.0.30001407
+    caniuse-lite: ^1.0.30001426
     fraction.js: ^4.2.0
     normalize-range: ^0.1.2
     picocolors: ^1.0.0
@@ -9016,7 +9016,7 @@ __metadata:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: 29e2ce3658afe9940450764266a896718b983429dfd8ef58fe55e0d3b103c0ff83712a343fcf5a7d3831616d15970ba17d729ac17d7433c5a7ec8a9c1af2fc15
+  checksum: 55ef1feb555516f68c740b3a0050d89b663c4a806a52ff23b184869ddf511b561fa56d66b2adb533bfef3798aee87b31132474582968d84fa59da133f837a230
   languageName: node
   linkType: hard
 
@@ -10310,10 +10310,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001400, caniuse-lite@npm:^1.0.30001407":
+"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001400":
   version: 1.0.30001416
   resolution: "caniuse-lite@npm:1.0.30001416"
   checksum: 7f0550fdd57f859b35bd999d0031fa4ed911b884bde0fe26b2305683a81d69c551f83055113d1e7f2d5acf9d6fa6aed79f71bf51067d4da39fc1a2718e231626
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001426":
+  version: 1.0.30001426
+  resolution: "caniuse-lite@npm:1.0.30001426"
+  checksum: 5b955cc191c1d7f3fb92ccde08d3d2003f3071fe96ce416d6c17c8aa725aa50e2d1546b3a47334a435b2992e125b3d81b47641d98f6c447a5ac71aff3b858f9a
   languageName: node
   linkType: hard
 
@@ -28498,7 +28505,7 @@ __metadata:
     "@redwoodjs/forms": 3.2.1
     "@redwoodjs/router": 3.2.1
     "@redwoodjs/web": 3.2.1
-    autoprefixer: 10.4.12
+    autoprefixer: 10.4.13
     postcss: 8.4.18
     postcss-loader: 7.0.1
     prop-types: 15.8.1
