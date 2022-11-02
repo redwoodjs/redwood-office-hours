@@ -13,8 +13,8 @@
     ]
   },
   "dependencies": {
-    "@algolia/autocomplete-js": "1.7.2",
-    "@algolia/autocomplete-theme-classic": "1.7.2",
+    "@algolia/autocomplete-js": "1.7.3",
+    "@algolia/autocomplete-theme-classic": "1.7.3",
     "@redwoodjs/forms": "3.2.1",
     "@redwoodjs/router": "3.2.1",
     "@redwoodjs/web": "3.2.1",
