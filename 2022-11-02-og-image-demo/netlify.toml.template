@@ -1,0 +1,69 @@
+[build]
+  base = "2022-11-02-og-image-demo"
+  command = "yarn netlify-toml && yarn rw deploy netlify --no-data-migrate"
+  publish = "web/dist"
+  functions = "api/dist/functions"
+
+[dev]
+  # To use [Netlify Dev](https://www.netlify.com/products/dev/),
+  # install netlify-cli from https://docs.netlify.com/cli/get-started/#installation
+  # and then use netlify link https://docs.netlify.com/cli/get-started/#link-and-unlink-sites
+  # to connect your local project to a site already on Netlify
+  # then run netlify dev and our app will be accessible on the port specified below
+  framework = "redwoodjs"
+  # Set targetPort to the [web] side port as defined in redwood.toml
+  targetPort = 8910
+  # Point your browser to this port to access your RedwoodJS app
+  port = 8888
+
+[[redirects]]
+  from = "/*"
+  to = "/200.html"
+  status = 200
+
+# Standard Classic Examples
+[[edge_functions]]
+function = "custom-font"
+path = "/og/custom-font"
+
+[[edge_functions]]
+function = "dynamic-image"
+path = "/og/dynamic-image"
+
+[[edge_functions]]
+function = "emoji"
+path = "/og/emoji"
+
+[[edge_functions]]
+function = "image-svg"
+path = "/og/image-svg"
+
+[[edge_functions]]
+function = "language"
+path = "/og/language"
+
+[[edge_functions]]
+function = "param"
+path = "/og/param"
+
+[[edge_functions]]
+function = "static"
+path = "/og/static"
+
+[[edge_functions]]
+function = "tailwind"
+path = "/og/tailwind"
+
+## Custom Examples
+[[edge_functions]]
+function = "splat"
+path = "/og/splat/*"
+
+[[edge_functions]]
+function = "pokemon"
+path = "/og/pokemon"
+
+[[edge_functions]]
+function = "pokemon"
+path = "/og/pokemon/p/*"
+

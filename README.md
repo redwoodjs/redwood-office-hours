@@ -14,6 +14,8 @@ This repo is where these demos and examples live.
 - [2022-10-05-enum-select-options](2022-10-05-enum-select-options/README.md) - # How To Use Human Readable Enums in a Form with a SelectList
 - [2022-10-12-algolia-autocomplete](2022-10-12-algolia-autocomplete/README.md) - How to Build an AutoComplete widget with RedwoodJS GraphQL API and Algolia UI Libraries
 - [2022-10-19-snaplet-copycat-seeds](2022-10-19-snaplet-copycat-seeds/README.md) - Seed deterministic data with Snaplet's Copycat
+- [2022-10-26-nested-writes-demo](2022-10-26-nested-writes-demo/README.md) - How To Perform Nested Writes with RedwoodJS and GraphQL
+- [2022-11-02-og-image-demo](2022-11-02-og-image-demo/README.md) - How to Generate OG Images for Social Cards using Netlify Edge Functions and RedwoodJS MetaTags
 
 ## Discord Invite Link
 
