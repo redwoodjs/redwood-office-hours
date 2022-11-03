@@ -116,6 +116,13 @@ export default async () => {
         path: '/og/pokemon/p/*',
         src: '/og/pokemon/p/bulbasaur',
       },
+      {
+        name: 'GraphQL Query',
+        description: 'Fetch all image examples via GraphQL',
+        function: 'graphql',
+        path: '/og/graphql',
+        src: '/og/graphql',
+      },
     ]
 
     await db.image.createMany({ data })
