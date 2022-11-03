@@ -73,9 +73,24 @@ path = "/og/pokemon/p/*"
 function = "custom-font"
 path = "/og/custom-font"
 
-# Example for dynamic-image - dynamic-image
+# Example for dynamic-image ascorbic - GitHub dynamic-image ascorbic
 [[edge_functions]]
-function = "dynamic-immge"
+function = "dynamic-image"
+path = "/og/dynamic-image"
+
+# Example for dynamic-image dthyresson - GitHub dynamic-image dthyresson
+[[edge_functions]]
+function = "dynamic-image"
+path = "/og/dynamic-image"
+
+# Example for dynamic-image RedwoodJS - GitHub dynamic-image redwoodjs
+[[edge_functions]]
+function = "dynamic-image"
+path = "/og/dynamic-image"
+
+# Example for dynamic-image default - dynamic-image
+[[edge_functions]]
+function = "dynamic-image"
 path = "/og/dynamic-image"
 
 # Example for Emoji - Shows emoji
@@ -132,3 +147,8 @@ path = "/og/pokemon"
 [[edge_functions]]
 function = "pokemon"
 path = "/og/pokemon/p/*"
+
+# Example for GraphQL Query - Fetch all image examples via GraphQL
+[[edge_functions]]
+function = "graphql"
+path = "/og/graphql"
