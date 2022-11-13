@@ -10781,13 +10781,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decamelize@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "decamelize@npm:6.0.0"
-  checksum: 689888f5ea39add843d79fb5a8d3bc1ce1df7583899bc7cef081c3deecd54758e24e8692f4c214e0ea6917742bb05ea1991e3e15c33031e7aa7b9041e8e8033a
-  languageName: node
-  linkType: hard
-
 "decimal.js@npm:^10.4.0, decimal.js@npm:^10.4.1":
   version: 10.4.1
   resolution: "decimal.js@npm:10.4.1"
@@ -14382,15 +14375,6 @@ __metadata:
   dependencies:
     decamelize: ^2.0.0
   checksum: a0ed69264b5069137afb369b46e18e8dbeb67edc7fb2ad1de18554108943e2fc59155f898013fb7a2f03522879adad7c9a93f1c88428844bcbee006c98db8f0a
-  languageName: node
-  linkType: hard
-
-"humanize-string@npm:3.0.0":
-  version: 3.0.0
-  resolution: "humanize-string@npm:3.0.0"
-  dependencies:
-    decamelize: ^6.0.0
-  checksum: 700d337913151a2f96949aa7d6afda7ab8254e4fd8790f79255ddd90dc53d49d6bd45ece122afbf310f9ec6bae11d3c6ca8b1fcd9220eb310f337254e27baf07
   languageName: node
   linkType: hard
 
@@ -19808,7 +19792,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.19":
+"postcss@npm:8.4.19, postcss@npm:^8.4.17, postcss@npm:^8.4.18":
   version: 8.4.19
   resolution: "postcss@npm:8.4.19"
   dependencies:
@@ -19837,17 +19821,6 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: d6999ff9d97d69138a4ca890644543825792d925549366bde10b587e0fccfc0e8e2d85f627588d67238f0c24e3cf7940171017f62c74710ef36f253e4256b940
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.4.18":
-  version: 8.4.19
-  resolution: "postcss@npm:8.4.19"
-  dependencies:
-    nanoid: ^3.3.4
-    picocolors: ^1.0.0
-    source-map-js: ^1.0.2
-  checksum: f33594fa0a2b629043deada34171744891054255baa49150d77f08f68edec1fa7eb9740e64c3a32e6f476c16e9e592af942fcf55f93051673dd208c0aee1d60b
   languageName: node
   linkType: hard
 
@@ -24241,7 +24214,6 @@ __metadata:
     "@redwoodjs/router": 3.4.0
     "@redwoodjs/web": 3.4.0
     autoprefixer: 10.4.13
-    humanize-string: 3.0.0
     postcss: 8.4.19
     postcss-loader: 7.0.1
     prop-types: 15.8.1

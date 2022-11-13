@@ -8,7 +8,6 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "3.4.0",
     "@redwoodjs/core": "3.2.1",
     "netlify-cli": "12.1.1",
     "prettier-plugin-tailwindcss": "0.1.13"
