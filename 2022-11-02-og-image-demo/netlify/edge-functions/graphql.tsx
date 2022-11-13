@@ -49,22 +49,32 @@ export default async (request: Request, context: Context) => {
                 width: '100%',
                 height: '100%',
                 display: 'flex',
-                // alignItems: 'center',
-                // justifyContent: 'center',
+                // alignItems: 'left',
+                justifyContent: 'center',
                 flexDirection: 'column',
                 // fontSize: 12,
                 color: 'white',
-                background: '#bebebe',
-                padding: 16,
+                background: '#2dd4bf',
+                padding: 12,
               }}
             >
+              <h1 tw="text-2xl m-0 p-0 mb-4 font-bold">
+                {data.images.length} OpenGraph Dynamic Image Generation Examples
+              </h1>
               {data.images.map((image) => (
-                <p key={image.id} tw="m-0 p-0 text-lg">
-                  {image.name} {image.description}
+                <p key={image.id} tw="flex m-0 p-0 text-lg font-bold">
+                  📸 "{image.name}" 👉 {image.description}
                 </p>
               ))}
             </div>
-          )
+          ),
+          {
+            width: 1200,
+            height: 630,
+            // Supported options: 'twemoji', 'blobmoji', 'noto', 'openmoji', 'fluent', 'fluentFlat'
+            // Default to 'twemoji'
+            emoji: 'twemoji',
+          }
         )
       })
       .catch((error) => {

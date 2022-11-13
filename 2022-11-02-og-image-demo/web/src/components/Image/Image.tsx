@@ -1,3 +1,5 @@
+import { Link, routes } from '@redwoodjs/router'
+
 import { PhotoIcon } from '@heroicons/react/24/solid'
 
 const Image = ({ image }) => {
@@ -7,7 +9,9 @@ const Image = ({ image }) => {
       <p className="text-md mb-4 text-gray-600">{image.description}</p>
 
       <div className="align-center align-items-center mb-4 flex justify-center">
-        <img src={image.src} className="h-48" />
+        <Link key={image.id} to={routes.image({ id: image.id })}>
+          <img src={image.src} className="h-48" />
+        </Link>
       </div>
 
       <p className="text-md text-gray-500">
