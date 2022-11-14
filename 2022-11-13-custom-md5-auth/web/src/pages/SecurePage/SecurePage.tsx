@@ -1,6 +1,8 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
+import SecretCell from 'src/components/SecretCell'
+
 const SecurePage = () => {
   return (
     <>
@@ -14,6 +16,7 @@ const SecurePage = () => {
         My default route is named <code>secure</code>, link to me with `
         <Link to={routes.secure()}>Secure</Link>`
       </p>
+      <SecretCell />
     </>
   )
 }

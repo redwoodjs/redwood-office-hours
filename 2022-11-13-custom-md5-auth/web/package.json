@@ -19,8 +19,15 @@
     "@redwoodjs/router": "^4.0.0-canary.227",
     "@redwoodjs/web": "^4.0.0-canary.227",
     "gotrue-js": "^0.9.29",
+    "md5": "^2.3.0",
     "prop-types": "15.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "postcss-loader": "^7.0.1",
+    "tailwindcss": "^3.2.4"
   }
 }

@@ -1,4 +1,4 @@
-import { goTrueAuthDecoder as authDecoder } from '@redwoodjs/auth-providers-api'
+import { authDecoder } from 'src/lib/authDecoder'
 import { createGraphQLHandler } from '@redwoodjs/graphql-server'
 
 import directives from 'src/directives/**/*.{js,ts}'

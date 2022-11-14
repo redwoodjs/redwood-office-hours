@@ -16,6 +16,8 @@ const Routes = () => {
     <Router useAuth={useAuth}>
       <Route path="/" page={HomePage} name="home" />
       <Route path="/about" page={AboutPage} name="about" />
+      <Route path="/sign-in" page={SignInPage} name="signIn" />
+      <Route path="/sign-up" page={SignUpPage} name="signUp" />
       <Set private unauthenticated="home">
         <Route path="/secure" page={SecurePage} name="secure" />
       </Set>

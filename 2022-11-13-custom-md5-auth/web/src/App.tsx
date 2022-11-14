@@ -6,7 +6,7 @@ import Routes from 'src/Routes'
 
 import './index.css'
 
-import { useAuth, AuthProvider } from './auth'
+import { AuthProvider, useAuth } from './auth'
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
