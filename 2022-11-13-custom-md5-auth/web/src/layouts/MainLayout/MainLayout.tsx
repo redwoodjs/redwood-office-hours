@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import { Link, routes, NavLink } from '@redwoodjs/router'
+import { toast, Toaster } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -32,6 +33,8 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   }
   return (
     <>
+      <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
+
       <div className="min-h-full">
         <Disclosure as="nav" className="border-b border-gray-200 bg-white">
           {({ open }) => (

@@ -12,7 +12,7 @@ import {
 } from '@redwoodjs/forms'
 import { Link, navigate, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
-import { toast, Toaster } from '@redwoodjs/web/toast'
+import { toast } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
 
@@ -35,7 +35,9 @@ const SignupPage = () => {
     const response = await signUp({ ...data })
 
     if (response.username) {
-      toast(response.username)
+      toast.success(
+        `Welcome ${response.username}. Please visit your profile to get your password. `
+      )
     }
   }
 
@@ -44,8 +46,6 @@ const SignupPage = () => {
       <MetaTags title="Signup" />
 
       <main className="rw-main">
-        <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
-
         <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
           <div className="w-full max-w-md space-y-8">
             <div>
