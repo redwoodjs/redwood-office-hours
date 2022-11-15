@@ -2,7 +2,7 @@ import md5 from 'md5'
 
 import { createAuthentication } from '@redwoodjs/auth'
 
-import { getTokenAsync, setTokenAsync, clearTokenAsync } from './tokenStorage'
+import { localStorageAdapter } from './storage'
 import type { Md5AuthClient, SignInOptions, SignUpOptions, User } from './types'
 
 const AUTH_PROVIDER_TYPE = 'md5-auth'
@@ -18,7 +18,7 @@ const encodeUserToken = (user: User) => {
 
 // Replace this with the auth service provider client sdk
 const customClient = {
-  login: async (options: SignInOptions) => {
+  login: (options: SignInOptions) => {
     console.debug('login', options)
 
     const user = { id: options.username, username: options.username, roles: [] }
@@ -28,33 +28,33 @@ const customClient = {
     if (encodedPassword === options.password) {
       const token = `${user.username}||${options.password}`
 
-      setTokenAsync(TOKEN_KEY, token)
+      localStorageAdapter.setItem(TOKEN_KEY, token)
 
       return user
     }
 
     return null
   },
-  signup: async (options: SignUpOptions) => {
+  signup: (options: SignUpOptions) => {
     const user = { id: options.username, username: options.username, roles: [] }
     const token = encodeUserToken(user)
 
-    setTokenAsync(TOKEN_KEY, token)
+    localStorageAdapter.setItem(TOKEN_KEY, token)
 
     return user
   },
-  logout: async () => {
-    await clearTokenAsync(TOKEN_KEY)
+  logout: () => {
+    localStorageAdapter.removeItem(TOKEN_KEY)
   },
-  getToken: async () => {
-    const token = await getTokenAsync(TOKEN_KEY)
+  getToken: () => {
+    const token = localStorageAdapter.getItem(TOKEN_KEY)
 
     if (token) return token as string
 
     return null
   },
-  getUserMetadata: async () => {
-    const token = (await getTokenAsync(TOKEN_KEY)) as string
+  getUserMetadata: () => {
+    const token = localStorageAdapter.getItem(TOKEN_KEY) as string
 
     if (token) {
       const [username, hash] = token.split('||')
@@ -86,11 +86,10 @@ const createCustomMd5AuthImplementation = (customClient: Md5AuthClient) => {
   return {
     type: AUTH_PROVIDER_TYPE,
     client: customClient,
-    login: async (options: SignInOptions) => await customClient.login(options),
-    logout: async () => await customClient.logout(),
-    signup: async (options: SignUpOptions) =>
-      await customClient.signup(options),
-    getToken: async () => await customClient.getToken(),
-    getUserMetadata: async () => await customClient.getUserMetadata(),
+    login: async (options: SignInOptions) => customClient.login(options),
+    logout: async () => customClient.logout(),
+    signup: async (options: SignUpOptions) => customClient.signup(options),
+    getToken: async () => customClient.getToken(),
+    getUserMetadata: async () => customClient.getUserMetadata(),
   }
 }

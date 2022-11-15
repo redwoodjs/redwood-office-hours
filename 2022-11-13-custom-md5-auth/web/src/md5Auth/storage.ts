@@ -66,16 +66,3 @@ export const getItemAsync = async (
     return value
   }
 }
-
-export const getTokenAsync = async (key: string) => {
-  return await getItemAsync(localStorageAdapter, key)
-}
-
-export const setTokenAsync = async (key: string, token: string) => {
-  return await setItemAsync(localStorageAdapter, key, token)
-}
-
-export const clearTokenAsync = async (key: string) => {
-  localStorageAdapter.removeItem(key)
-  return
-}

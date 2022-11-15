@@ -1,9 +1,9 @@
 export interface Md5AuthClient {
-  login: (options: SignInOptions) => Promise<User>
-  logout: () => Promise<void>
-  signup: (options: SignUpOptions) => Promise<User>
-  getToken: () => Promise<string>
-  getUserMetadata: () => Promise<User | null>
+  login: (options: SignInOptions) => User
+  logout: () => void
+  signup: (options: SignUpOptions) => User
+  getToken: () => string
+  getUserMetadata: () => User | null
 }
 
 // This type should be inferred from the general interface above
