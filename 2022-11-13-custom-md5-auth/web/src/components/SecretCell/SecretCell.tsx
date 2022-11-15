@@ -5,6 +5,7 @@ export const QUERY = gql`
   query FindSecretQuery {
     secret {
       message
+      password
     }
   }
 `

@@ -5,7 +5,7 @@ import { logger } from 'src/lib/logger'
 
 export const AUTH_PROVIDER_TYPE = 'md5-auth'
 
-const md5 = (content) => {
+export const md5 = (content) => {
   return createHash('md5').update(content).digest('hex')
 }
 

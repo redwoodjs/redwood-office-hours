@@ -2,18 +2,18 @@ import md5 from 'md5'
 
 import { createAuthentication } from '@redwoodjs/auth'
 
-import { getSession, setSession, clearSession } from './localStorage'
+import { getTokenAsync, setTokenAsync, clearTokenAsync } from './tokenStorage'
 import type { Md5AuthClient, SignInOptions, SignUpOptions, User } from './types'
 
 const AUTH_PROVIDER_TYPE = 'md5-auth'
 const TOKEN_KEY = 'md5-auth-token'
 
-const encodePassword = (user: User) => {
+const encodeUserPassword = (user: User) => {
   return md5(user.username)
 }
 
-const encodeSession = (user: User) => {
-  return `${user.username}||${encodePassword(user)}`
+const encodeUserToken = (user: User) => {
+  return `${user.username}||${encodeUserPassword(user)}`
 }
 
 // Replace this with the auth service provider client sdk
@@ -23,12 +23,12 @@ const customClient = {
 
     const user = { id: options.username, username: options.username, roles: [] }
 
-    const encodedPassword = encodePassword(user)
+    const encodedPassword = encodeUserPassword(user)
 
     if (encodedPassword === options.password) {
-      const session = `${user.username}||${options.password}`
+      const token = `${user.username}||${options.password}`
 
-      setSession(session, TOKEN_KEY)
+      setTokenAsync(TOKEN_KEY, token)
 
       return user
     }
@@ -37,24 +37,24 @@ const customClient = {
   },
   signup: async (options: SignUpOptions) => {
     const user = { id: options.username, username: options.username, roles: [] }
-    const session = encodeSession(user)
+    const token = encodeUserToken(user)
 
-    setSession(session, TOKEN_KEY)
+    setTokenAsync(TOKEN_KEY, token)
 
     return user
   },
   logout: async () => {
-    await clearSession(TOKEN_KEY)
+    await clearTokenAsync(TOKEN_KEY)
   },
   getToken: async () => {
-    const token = await getSession(TOKEN_KEY)
+    const token = await getTokenAsync(TOKEN_KEY)
 
     if (token) return token as string
 
     return null
   },
   getUserMetadata: async () => {
-    const token = (await getSession(TOKEN_KEY)) as string
+    const token = (await getTokenAsync(TOKEN_KEY)) as string
 
     if (token) {
       const [username, hash] = token.split('||')
@@ -70,7 +70,7 @@ const customClient = {
   },
 }
 
-export function createCustomMd5Auth() {
+export const createCustomMd5Auth = () => {
   const authImplementation = createCustomMd5AuthImplementation(customClient)
 
   // You can pass custom provider hooks here if you need to as a second
@@ -82,7 +82,7 @@ export function createCustomMd5Auth() {
 // the shape of this object (i.e. keep all the key names) but change all the
 // values/functions to use methods from the auth service provider client sdk
 // you're integrating with
-function createCustomMd5AuthImplementation(customClient: Md5AuthClient) {
+const createCustomMd5AuthImplementation = (customClient: Md5AuthClient) => {
   return {
     type: AUTH_PROVIDER_TYPE,
     client: customClient,
