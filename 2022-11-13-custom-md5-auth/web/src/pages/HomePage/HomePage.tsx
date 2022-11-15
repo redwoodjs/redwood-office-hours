@@ -25,7 +25,7 @@ const HomePage = () => {
       )}
       {isAuthenticated && (
         <>
-          <Link to={routes.secure()}>View Secure Page</Link>
+          <Link to={routes.profile()}>View Profile Page</Link>
           <button onClick={logOut}>Log Out</button>
         </>
       )}

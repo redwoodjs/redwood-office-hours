@@ -13,11 +13,14 @@
     ]
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.4",
+    "@heroicons/react": "^2.0.13",
     "@redwoodjs/auth": "4.0.0-canary.227+80b207b88",
     "@redwoodjs/auth-providers-web": "^0.0.1",
     "@redwoodjs/forms": "^4.0.0-canary.227",
     "@redwoodjs/router": "^4.0.0-canary.227",
     "@redwoodjs/web": "^4.0.0-canary.227",
+    "@tailwindcss/forms": "^0.5.3",
     "gotrue-js": "^0.9.29",
     "md5": "^2.3.0",
     "prop-types": "15.8.1",
