@@ -12,7 +12,7 @@ const AboutPage = () => {
           Here we showcase how a developer might implement{' '}
           <a href="https://redwoodjs.com/docs/auth/custom" target="_blank">
             custom authentication
-          </a>
+          </a>{' '}
           to "roll-your-own" authentication or implement an Authentication
           Provider that as yet{' '}
           <a href="https://redwoodjs.com/docs/authentication" target="_blank">
@@ -22,7 +22,7 @@ const AboutPage = () => {
         </p>
         <p>
           This example is a <span className="font-bold">contrived</span> example
-          to demonsrate what one needs to do to implement the basics of an
+          to demonstrate what one needs to do to implement the basics of an
           authentication client/provider.
         </p>
         <p>
@@ -98,7 +98,7 @@ const AboutPage = () => {
         </p>
         <h3 className="text-md font-medium">logout</h3>
         <p>
-          The logout method rewmoves the token `md5-auth-token` from
+          The logout method removes the token `md5-auth-token` from
           localStorage. Thus there's nothing to authenticate the request.
         </p>
         <h3 className="text-md font-medium">signup</h3>
@@ -113,7 +113,7 @@ const AboutPage = () => {
           password is the md5 hash digest of the username.
         </p>
         <p>
-          For examplem, the username `md5auth` has password
+          For example, the username `md5auth` has password
           `3aa27b6f0599c098862c55ca5cfc64bc`.
         </p>
         <h3 className="text-md font-medium">getToken</h3>
