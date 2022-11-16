@@ -1,7 +1,8 @@
 [build]
-command = "yarn rw deploy netlify"
-publish = "web/dist"
-functions = "api/dist/functions"
+  base = "2022-11-13-custom-md5-auth"
+  command = "yarn rw deploy netlify  --no-prisma --no-data-migrate"
+  publish = "web/dist"
+  functions = "api/dist/functions"
 
 [dev]
   # To use [Netlify Dev](https://www.netlify.com/products/dev/),
