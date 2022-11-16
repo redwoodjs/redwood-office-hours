@@ -7,7 +7,9 @@ import { toast, Toaster } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
 
-function classNames(...classes) {
+import Footer from 'src/components/Footer/Footer'
+
+const classNames = (...classes) => {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -255,6 +257,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
           </main>
         </div>
       </div>
+      <Footer />
     </>
   )
 }
