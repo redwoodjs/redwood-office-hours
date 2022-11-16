@@ -23,9 +23,9 @@ const customClient = {
 
     const user = { id: options.username, username: options.username, roles: [] }
 
-    const encodedPassword = encodeUserPassword(user)
+    const encodedUsername = encodeUserPassword(user)
 
-    if (encodedPassword === options.password) {
+    if (encodedUsername === options.password) {
       const token = `${user.username}||${options.password}`
 
       localStorageAdapter.setItem(TOKEN_KEY, token)

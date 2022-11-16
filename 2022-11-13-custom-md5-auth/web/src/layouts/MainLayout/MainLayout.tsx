@@ -28,8 +28,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   const user = {
     name: isAuthenticated && userMetadata?.id,
     email: isAuthenticated && userMetadata?.email,
-    imageUrl:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    imageUrl: 'favicon.png',
   }
   return (
     <>
@@ -247,7 +246,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
             <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
               {/* Replace with your content */}
               <div className="px-4 py-8 sm:px-0">
-                <div className="h-96 rounded-md border border-gray-100 p-4 shadow-sm">
+                <div className="rounded-md border border-gray-100 p-4 shadow-sm">
                   {children}
                 </div>
               </div>

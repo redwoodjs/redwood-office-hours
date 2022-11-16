@@ -23,5 +23,5 @@ export const Failure = ({
 export const Success = ({
   secret,
 }: CellSuccessProps<FindSecretQuery, FindSecretQueryVariables>) => {
-  return <div>{JSON.stringify(secret)}</div>
+  return <div className="text-sm">{secret.message}</div>
 }

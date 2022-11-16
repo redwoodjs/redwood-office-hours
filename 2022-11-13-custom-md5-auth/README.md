@@ -1,3 +1,13 @@
+# How to Implement Custom Auth
+
+Please the the "About" page for a description of this example and how the authentication works.
+
+TLDR; this is a contrived example of a custom Md5Auth client that implements the needed login, logout, signout, signup, getToken, and getUserMetadata auth provider methods.
+
+On sign up, your a password is generated from a MD5 hash of your username.
+
+You can then use this password to login -- and also to be used to authenticate GraphQL requests to protected queries.
+
 # README
 
 Welcome to [RedwoodJS](https://redwoodjs.com)!
@@ -27,9 +37,11 @@ Your browser should automatically open to http://localhost:8910 where you'll see
 > Congratulations on running your first Redwood CLI command!
 > From dev to deploy, the CLI is with you the whole way.
 > And there's quite a few commands at your disposal:
+>
 > ```
 > yarn redwood --help
 > ```
+>
 > For all the details, see the [CLI reference](https://redwoodjs.com/docs/cli-commands).
 
 ## Prisma and the database
@@ -94,7 +106,7 @@ Redwood fully integrates Jest with the front and the backends and makes it easy 
 yarn rw test
 ```
 
-To make the integration even more seamless, Redwood augments Jest with database [scenarios](https://redwoodjs.com/docs/testing.md#scenarios)  and [GraphQL mocking](https://redwoodjs.com/docs/testing.md#mocking-graphql-calls).
+To make the integration even more seamless, Redwood augments Jest with database [scenarios](https://redwoodjs.com/docs/testing.md#scenarios) and [GraphQL mocking](https://redwoodjs.com/docs/testing.md#mocking-graphql-calls).
 
 ## Ship it
 

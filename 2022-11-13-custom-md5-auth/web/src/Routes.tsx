@@ -12,12 +12,14 @@ import { Router, Route, Set } from '@redwoodjs/router'
 import { useAuth } from './auth'
 
 import MainLayout from './layouts/MainLayout/MainLayout'
+import ProfilePage from './pages/ProfilePage/ProfilePage'
+
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
       <Set wrap={MainLayout}>
         <Route path="/" page={HomePage} name="home" />
-        <Route path="/about" page={AboutPage} name="about" />
+        <Route path="/about" page={AboutPage} name="about" prerender />
         <Route path="/sign-in" page={SignInPage} name="signIn" />
         <Route path="/sign-up" page={SignUpPage} name="signUp" />
         <Set private unauthenticated="home">

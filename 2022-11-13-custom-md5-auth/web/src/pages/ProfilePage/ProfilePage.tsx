@@ -12,12 +12,17 @@ const ProfilePage = () => {
       <MetaTags title="Profile" description="Profile page" />
 
       <h1 className="mb-4 text-lg">My Profile</h1>
-      <div className="mb-2 border-2 border-dotted p-4 shadow-sm">
-        {isAuthenticated && <div>{JSON.stringify(userMetadata)}</div>}
-      </div>
-      <div className="mb-2 border-2 border-dotted p-4 shadow-sm">
-        {isAuthenticated && <SecretCell />}
-      </div>
+      {isAuthenticated && (
+        <div className="mb-2">
+          <div className="text-sm font-medium text-gray-900">Username</div>
+          <div className="text-sm text-gray-500">{userMetadata.username}</div>
+        </div>
+      )}
+      {isAuthenticated && (
+        <div className="mb-2">
+          <SecretCell />
+        </div>
+      )}
     </>
   )
 }
