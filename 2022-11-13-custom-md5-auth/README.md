@@ -1,12 +1,16 @@
 # How to Implement Custom Auth
 
-Please the the "About" page for a description of this example and how the authentication works.
-
-TLDR; this is a contrived example of a custom Md5Auth client that implements the needed login, logout, signout, signup, getToken, and getUserMetadata auth provider methods.
+This is a contrived example of a custom Md5Auth client that implements the needed login, logout, signout, signup, getToken, and getUserMetadata auth provider methods.
 
 On sign up, your a password is generated from a MD5 hash of your username.
 
 You can then use this password to login -- and also to be used to authenticate GraphQL requests to protected queries.
+
+Please see the [About](./web/src/pages/AboutPage/AboutPage.tsx) page for a description of this example and how the authentication works.
+
+## Demo
+
+Visit [https://rw-office-hours-custom-auth.netlify.app/about](https://rw-office-hours-custom-auth.netlify.app/about) to demo this custom auth example.
 
 # README
 

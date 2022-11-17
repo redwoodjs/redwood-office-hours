@@ -16,6 +16,7 @@ This repo is where these demos and examples live.
 - [2022-10-19-snaplet-copycat-seeds](2022-10-19-snaplet-copycat-seeds/README.md) - Seed deterministic data with Snaplet's Copycat
 - [2022-10-26-nested-writes-demo](2022-10-26-nested-writes-demo/README.md) - How To Perform Nested Writes with RedwoodJS and GraphQL
 - [2022-11-02-og-image-demo](2022-11-02-og-image-demo/README.md) - How to Generate OG Images for Social Cards using Netlify Edge Functions and RedwoodJS MetaTags
+- [2022-11-13-custom-md5-auth](2022-11-13-custom-md5-auth/README.md) - How to Implement Custom Auth in RedwoodJS v4
 
 ## Discord Invite Link
 
