@@ -6,7 +6,7 @@ This project uses an Edge Function to determine your [geolocation](https://docs.
 
 ## Demo
 
-You may demo this app at ...
+You may [demo](https://rw-office-hours-og-images.netlify.app) this app at [https://rw-office-hours-og-images.netlify.app](https://rw-office-hours-og-images.netlify.app) hosted on Netlify for the edge functions.
 
 ## Requirements
 
