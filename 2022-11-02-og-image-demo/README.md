@@ -8,6 +8,11 @@ This project uses an Edge Function to determine your [geolocation](https://docs.
 
 You may [demo](https://rw-office-hours-og-images.netlify.app) this app at [https://rw-office-hours-og-images.netlify.app](https://rw-office-hours-og-images.netlify.app) hosted on Netlify for the edge functions.
 
+
+Here's an example of a generated image from `https://rw-office-hours-og-images.netlify.app/og/dynamic-image?username=redwoodjs`:
+
+<img src="https://rw-office-hours-og-images.netlify.app/og/dynamic-image?username=redwoodjs"/>
+
 ## Requirements
 
 - A Netlify account. Sign up for free [here](https://app.netlify.com/signup).
