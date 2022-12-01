@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/directives/requireAuth/requireAuth.js"],
+  "sourcesContent": ["import gql from 'graphql-tag'\n\nimport { createValidatorDirective } from '@redwoodjs/graphql-server'\n\nimport { requireAuth as applicationRequireAuth } from 'src/lib/auth'\n\nexport const schema = gql`\n  \"\"\"\n  Use to check whether or not a user is authenticated and is associated\n  with an optional set of roles.\n  \"\"\"\n  directive @requireAuth(roles: [String]) on FIELD_DEFINITION\n`\n\nconst validate = ({ directiveArgs }) => {\n  const { roles } = directiveArgs\n  applicationRequireAuth({ roles })\n}\n\nconst requireAuth = createValidatorDirective(schema, validate)\n\nexport default requireAuth\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAEA;;;;;;4BAAyC;AAEzC,kBAA8C;AAEvC,MAAMA,SAAM;EAAA,QAAA;EAAA,eAAA,CAAA;IAAA,QAAA;IAAA,eAAA;MAAA,QAAA;MAAA,SAAA;MAAA,SAAA;IAAA;IAAA,QAAA;MAAA,QAAA;MAAA,SAAA;IAAA;IAAA,aAAA,CAAA;MAAA,QAAA;MAAA,QAAA;QAAA,QAAA;QAAA,SAAA;MAAA;MAAA,QAAA;QAAA,QAAA;QAAA,QAAA;UAAA,QAAA;UAAA,QAAA;YAAA,QAAA;YAAA,SAAA;UAAA;QAAA;MAAA;MAAA,cAAA,CAAA;IAAA,CAAA;IAAA,cAAA;IAAA,aAAA,CAAA;MAAA,QAAA;MAAA,SAAA;IAAA,CAAA;EAAA,CAAA;EAAA,OAAA;IAAA,SAAA;IAAA,OAAA;IAAA,UAAA;MAAA,QAAA;MAAA,QAAA;MAAA,kBAAA;QAAA,QAAA;QAAA,UAAA;MAAA;IAAA;EAAA;AAAA;AAQnB,MAAMC,WAAW,CAAC;EAAEC;AAAc,MAAM;AACtC,QAAM;IAAEC;EAAM,IAAID;AAClBE,kBAAAA,aAAuB;IAAED;EAAM,CAAC;AAClC;AAEA,MAAME,kBAAcC,gDAAyBN,QAAQC,QAAQ;AAE7D,IAAA,sBAAeI;",
+  "names": ["schema", "validate", "directiveArgs", "roles", "applicationRequireAuth", "requireAuth", "createValidatorDirective"]
+}
