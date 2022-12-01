@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/lib/cache.ts"],
+  "sourcesContent": ["import {\n  createCache,\n  InMemoryClient,\n  MemcachedClient,\n} from '@redwoodjs/api/cache'\n\nimport { logger } from './logger'\n\nconst memJsFormattedLogger = {\n  log: (msg: string) => logger.error(msg),\n}\n\nexport let client: InMemoryClient | MemcachedClient\n\nif (process.env.NODE_ENV === 'test') {\n  client = new InMemoryClient()\n} else {\n  try {\n    client = new MemcachedClient(process.env.CACHE_HOST, {\n      logger: memJsFormattedLogger,\n    })\n  } catch (e) {\n    logger.error(`Could not connect to cache: ${e.message}`)\n  }\n}\n\nexport const { cache, cacheFindMany } = createCache(client, {\n  logger,\n  timeout: 500,\n})\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;;;;;;;mBAIO;AAEP,oBAAuB;AAEvB,MAAMA,uBAAuB;EAC3BC,KAAMC,SAAgBC,qBAAOC,MAAMF,GAAG;AACxC;AAEO,IAAIG;AAEX,IAAIC,QAAQC,IAAIC,aAAa,QAAQ;AACnCH,WAAS,IAAII,4BAAc;AAC7B,OAAO;AACL,MAAI;AACFJ,aAAS,IAAIK,6BAAgBJ,QAAQC,IAAII,YAAY;MACnDR,QAAQH;IACV,CAAC;EACH,SAASY,GAAP;AACAT,yBAAOC,MAAO,+BAA8BQ,EAAEC,SAAS;EACzD;AACF;AAEO,MAAM;EAAEC;EAAOC;AAAc,QAAIC,0BAAYX,QAAQ;EAC1DF;EACAc,SAAS;AACX,CAAC;",
+  "names": ["memJsFormattedLogger", "log", "msg", "logger", "error", "client", "process", "env", "NODE_ENV", "InMemoryClient", "MemcachedClient", "CACHE_HOST", "e", "message", "cache", "cacheFindMany", "createCache", "timeout"]
+}

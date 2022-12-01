@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/lib/auth.js"],
+  "sourcesContent": ["/**\n * Once you are ready to add authentication to your application\n * you'll build out requireAuth() with real functionality. For\n * now we just return `true` so that the calls in services\n * have something to check against, simulating a logged\n * in user that is allowed to access that service.\n *\n * See https://redwoodjs.com/docs/authentication for more info.\n */\nexport const isAuthenticated = () => {\n  return true\n}\n\nexport const hasRole = ({ roles }) => {\n  return roles !== undefined\n}\n\n// This is used by the redwood directive\n// in ./api/src/directives/requireAuth\n\n// Roles are passed in by the requireAuth directive if you have auth setup\n// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars\nexport const requireAuth = ({ roles }) => {\n  return isAuthenticated()\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;;;;;;;AASO,MAAMA,kBAAkB,MAAM;AACnC,SAAO;AACT;AAEO,MAAMC,UAAU,CAAC;EAAEC;AAAM,MAAM;AACpC,SAAOA,UAAUC;AACnB;AAOO,MAAMC,cAAc,CAAC;EAAEF;AAAM,MAAM;AACxC,SAAOF,gBAAe;AACxB;",
+  "names": ["isAuthenticated", "hasRole", "roles", "undefined", "requireAuth"]
+}
