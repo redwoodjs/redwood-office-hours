@@ -10,6 +10,17 @@
 
 1. Postgres CTEs & Window Functions
 
+   Prisma is a great ORM, but sometimes you need to go native and write raw SQL to perform complex calculations or queries.
+
+   ### Common Table Expressions (CTEs)
+
+   - "mini temp tables" with selected data that you can query in subsequent selects
+   - break down very large queries into management steps
+   - the `WITH`
+   - WITH provides a way to write auxiliary statements for use in a larger query. These statements, which are often referred to as Common Table Expressions or CTEs, can be thought of as defining temporary tables that exist just for one query.
+   - https://www.postgresql.org/docs/15/queries-with.html
+   - Extra credit `RECURSIVE` and `UNION` queries
+
    ### Window Functions
 
    - Window functions provide the ability to perform calculations across sets of rows that are related to the current query row
@@ -99,7 +110,81 @@
 
 1. Postgres Functions & Triggers
 
+   - Triggers can calculate on insert, update, delete
+   - See updating [vote counts example](https://github.com/supabase-community/supabase-graphql-example/blob/main/data/supabase/06-update-post-vote-counts.sql) for the [supanews](https://supabase-graphql-example.vercel.app) demo
+
+   ```sql
+   CREATE OR REPLACE FUNCTION public.update_vote_counts()
+   RETURNS trigger as $$
+   BEGIN
+
+   WITH r AS (
+   SELECT
+       coalesce("Vote"."postId", "Post".id) AS "postId",
+       count(1) "voteTotal",
+       count(1) FILTER (WHERE direction = 'UP') "upVoteTotal",
+       count(1) FILTER (WHERE direction = 'DOWN') "downVoteTotal",
+       coalesce(sum(
+               CASE WHEN direction = 'UP' THEN
+                   1
+               WHEN direction = 'DOWN' THEN
+                   -1
+               ELSE
+                   0
+               END), 0) "voteDelta",
+       round(coalesce((sum(
+           CASE WHEN direction = 'UP' THEN
+               1
+           WHEN direction = 'DOWN' THEN
+               -1
+           ELSE
+               0
+           END ) - 1) / (DATE_PART('hour', now() - max("Vote"."createdAt")) + 2) ^ 1.8 * 100000, -2147483648)::numeric, 0) AS "score",
+       rank() OVER (ORDER BY round(coalesce((sum( CASE WHEN direction = 'UP' THEN
+               1
+           WHEN direction = 'DOWN' THEN
+               -1
+           ELSE
+               0
+           END) - 1) / (DATE_PART('hour', now() - max("Vote"."createdAt")) + 2) ^ 1.8 * 100000, -2147483648)::numeric, 0)
+           DESC,
+           "Post"."createdAt" DESC,
+           "Post".title ASC) "voteRank"
+   FROM
+       "Vote"
+       RIGHT JOIN "Post" ON "Vote"."postId" = "Post".id
+   GROUP BY
+       "Post".id,
+       "Vote"."postId"
+   )
+
+   UPDATE
+       public. "Post"
+   SET
+       "upVoteTotal" = r. "upVoteTotal",
+       "downVoteTotal" = r. "downVoteTotal",
+       "voteTotal" = r. "voteTotal",
+   "voteDelta" = r. "voteDelta",
+       "voteRank" = r. "voteRank",
+   "score" = r. "score"
+   FROM
+       r
+   WHERE
+       r."postId" = public. "Post".id;
+
+   RETURN new;
+   END;
+   $$ language plpgsql security definer;
+
+   CREATE TRIGGER on_vote_created AFTER INSERT ON public."Vote" FOR EACH ROW EXECUTE FUNCTION public.update_vote_counts();
+   CREATE TRIGGER on_vote_deleted AFTER DELETE ON public."Vote" FOR EACH ROW EXECUTE FUNCTION public.update_vote_counts();
+   ```
+
 1. Views and Materialized Views
+
+   - Save it for later
+   - Views https://www.postgresql.org/docs/15/sql-createview.html
+   - Materialized Views are stored. Great for precalculating complex queries. Can be refreshed.- https://www.postgresql.org/docs/15/sql-creatematerializedview.html
 
 1. Prisma Nested Reads and Writes
 
@@ -121,7 +206,7 @@
 
 1. Caching
 
-   No when to hold them ... when to walk way. when to ru.
+   - No when to hold them ... when to walk way. Know when to run.
 
 1. Documentation
 
