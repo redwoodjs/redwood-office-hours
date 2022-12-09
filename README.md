@@ -17,6 +17,7 @@ This repo is where these demos and examples live.
 - [2022-10-26-nested-writes-demo](2022-10-26-nested-writes-demo/README.md) - How To Perform Nested Writes with RedwoodJS and GraphQL
 - [2022-11-02-og-image-demo](2022-11-02-og-image-demo/README.md) - How to Generate OG Images for Social Cards using Netlify Edge Functions and RedwoodJS MetaTags
 - [2022-11-13-custom-md5-auth](2022-11-13-custom-md5-auth/README.md) - How to Implement Custom Auth in RedwoodJS v4
+- [2022-12-00-redwood-retro-lists](2022-12-00-redwood-retro-lists/README.md) - 2022 Redwood Year in Review. Top 10 Lists. Stats. Retrospectives.
 
 ## Discord Invite Link
 
