@@ -1698,6 +1698,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime-corejs3@npm:7.20.7":
+  version: 7.20.7
+  resolution: "@babel/runtime-corejs3@npm:7.20.7"
+  dependencies:
+    core-js-pure: ^3.25.1
+    regenerator-runtime: ^0.13.11
+  checksum: c128367bf35af04b161c00f8f85f68bcce5a94257d15c916c192586c805c481352f85b5f1a7c4e7986304a8c24d3358897c5b566fef09c9261de3456cace9c2b
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.20.1
   resolution: "@babel/runtime@npm:7.20.1"
@@ -3773,7 +3783,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/auth@npm:4.0.0-canary.227+80b207b88, @redwoodjs/auth@npm:^4.0.0-canary.227+80b207b88":
+"@redwoodjs/auth@npm:4.0.0-rc.437":
+  version: 4.0.0-rc.437
+  resolution: "@redwoodjs/auth@npm:4.0.0-rc.437"
+  dependencies:
+    "@babel/runtime-corejs3": 7.20.7
+    core-js: 3.26.1
+    react: 17.0.2
+  checksum: e271a2bd8804583f5bcec3801df06897c0183affb72fdbb4d17959089cc8616147b6725501a0d832d5e2844d29221bdf536243415cdc04f2606dfb74f81434e7
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/auth@npm:^4.0.0-canary.227+80b207b88":
   version: 4.0.0-canary.227
   resolution: "@redwoodjs/auth@npm:4.0.0-canary.227"
   dependencies:
@@ -9794,6 +9815,13 @@ __metadata:
   version: 3.26.0
   resolution: "core-js@npm:3.26.0"
   checksum: 5b61da1cccea18b42e64dafe7270b3a12e31f6fca97f7bbebd565b89acd71c2bbb45605ceb164f5b0aa7e41843f6ae8ecc16d4833a081ac269969220c50fd8d6
+  languageName: node
+  linkType: hard
+
+"core-js@npm:3.26.1":
+  version: 3.26.1
+  resolution: "core-js@npm:3.26.1"
+  checksum: 82d36c6f54fc0349998fa7fc67d200ba272f1cd1674c6786dc17f9d259d6555fc05662044528eae73ad6e90f71d503ab5c060ad4745492ef804308209f9aec13
   languageName: node
   linkType: hard
 
@@ -20030,6 +20058,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"regenerator-runtime@npm:^0.13.11":
+  version: 0.13.11
+  resolution: "regenerator-runtime@npm:0.13.11"
+  checksum: 12b069dc774001fbb0014f6a28f11c09ebfe3c0d984d88c9bced77fdb6fedbacbca434d24da9ae9371bfbf23f754869307fb51a4c98a8b8b18e5ef748677ca24
+  languageName: node
+  linkType: hard
+
 "regenerator-transform@npm:^0.15.0":
   version: 0.15.0
   resolution: "regenerator-transform@npm:0.15.0"
@@ -23520,7 +23555,7 @@ __metadata:
   dependencies:
     "@headlessui/react": ^1.7.4
     "@heroicons/react": ^2.0.13
-    "@redwoodjs/auth": 4.0.0-canary.227+80b207b88
+    "@redwoodjs/auth": 4.0.0-rc.437
     "@redwoodjs/auth-providers-web": ^0.0.1
     "@redwoodjs/forms": ^4.0.0-canary.227
     "@redwoodjs/router": ^4.0.0-canary.227
