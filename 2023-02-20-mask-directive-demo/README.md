@@ -105,6 +105,17 @@ Showcase the RedwoodJS Transformer directive to mask an email address -- with te
 
 1. Directives can look at arguments, so could pass in the mask charatcter to use `+` instead of `*`
 2. Directives can access currentUser auth to mask if not in a role or some other scenario
+3. You can cascade transformer directives; see: https://redwoodjs.com/docs/directives#cascade-transformers
+4. So can uppercase the masked email by:
+
+```
+  type Profile {
+    id: Int!
+    email: String! @maskedEmail @uppercase
+    name: String!
+    birthday: DateTime! @yearOnly
+  }
+ ``
 
 ## Notes
 
@@ -126,15 +137,19 @@ Welcome to [RedwoodJS](https://redwoodjs.com)!
 Start by installing dependencies:
 
 ```
+
 yarn install
+
 ```
 
 Then change into that directory and start the development server:
 
 ```
+
 cd my-redwood-project
 yarn redwood dev
-```
+
+````
 
 Your browser should automatically open to http://localhost:8910 where you'll see the Welcome Page, which links out to a ton of great resources.
 
@@ -154,23 +169,27 @@ Your browser should automatically open to http://localhost:8910 where you'll see
 
 Redwood wouldn't be a full-stack framework without a database. It all starts with the schema. Open the [`schema.prisma`](api/db/schema.prisma) file in `api/db` and replace the `UserExample` model with the following `Post` model:
 
-```
+````
+
 model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  body      String
-  createdAt DateTime @default(now())
+id Int @id @default(autoincrement())
+title String
+body String
+createdAt DateTime @default(now())
 }
+
 ```
 
 Redwood uses [Prisma](https://www.prisma.io/), a next-gen Node.js and TypeScript ORM, to talk to the database. Prisma's schema offers a declarative way of defining your app's data models. And Prisma [Migrate](https://www.prisma.io/migrate) uses that schema to make database migrations hassle-free:
 
 ```
+
 yarn rw prisma migrate dev
 
 # ...
 
 ? Enter a name for the new migration: › create posts
+
 ```
 
 > `rw` is short for `redwood`
@@ -180,7 +199,9 @@ You'll be prompted for the name of your migration. `create posts` will do.
 Now let's generate everything we need to perform all the CRUD (Create, Retrieve, Update, Delete) actions on our `Post` model:
 
 ```
+
 yarn redwood g scaffold post
+
 ```
 
 Navigate to http://localhost:8910/posts/new, fill in the title and body, and click "Save":
@@ -194,13 +215,17 @@ That's more than ok—Redwood integrates Storybook so that you can work on desig
 Mockup, build, and verify your React components, even in complete isolation from the backend:
 
 ```
+
 yarn rw storybook
+
 ```
 
 Before you start, see if the CLI's `setup ui` command has your favorite styling library:
 
 ```
+
 yarn rw setup ui --help
+
 ```
 
 ## Testing with Jest
@@ -209,7 +234,9 @@ It'd be hard to scale from side project to startup without a few tests.
 Redwood fully integrates Jest with the front and the backends and makes it easy to keep your whole app covered by generating test files with all your components and services:
 
 ```
+
 yarn rw test
+
 ```
 
 To make the integration even more seamless, Redwood augments Jest with database [scenarios](https://redwoodjs.com/docs/testing.md#scenarios) and [GraphQL mocking](https://redwoodjs.com/docs/testing.md#mocking-graphql-calls).
@@ -219,14 +246,18 @@ To make the integration even more seamless, Redwood augments Jest with database 
 Redwood is designed for both serverless deploy targets like Netlify and Vercel and serverful deploy targets like Render and AWS:
 
 ```
+
 yarn rw setup deploy --help
+
 ```
 
 Don't go live without auth!
 Lock down your front and backends with Redwood's built-in, database-backed authentication system ([dbAuth](https://redwoodjs.com/docs/authentication#self-hosted-auth-installation-and-setup)), or integrate with nearly a dozen third party auth providers:
 
 ```
+
 yarn rw setup auth --help
+
 ```
 
 ## Next Steps
@@ -237,3 +268,4 @@ The best way to learn Redwood is by going through the comprehensive [tutorial](h
 
 - Stay updated: read [Forum announcements](https://community.redwoodjs.com/c/announcements/5), follow us on [Twitter](https://twitter.com/redwoodjs), and subscribe to the [newsletter](https://redwoodjs.com/newsletter)
 - [Learn how to contribute](https://redwoodjs.com/docs/contributing)
+```
