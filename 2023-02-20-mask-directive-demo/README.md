@@ -6,6 +6,25 @@ Showcase the RedwoodJS Transformer directive to mask an email address -- with te
 
 1. `yarn install`
 1. `yarn rw prisma migrate dev` / or `yarn rw prisma migrate reset` to clear an re-seed. Seeds use Snaplet copycat.
+
+Note this repo already has the model and the service resolvers generated.
+
+1. Add model in api/db/schema.prisma
+
+```
+model Profile {
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
+  name     String
+  birthday DateTime
+}
+```
+
+1. Create the SDL, and CRUD service aka resolvers:
+1. `yarn rw g sdl Profile --crud`
+
+Continued ...
+
 1. `yarn rw prisma studio` see Profile data
 1. `yarn rw dev` launch dev server app
 1. open `http://localhost:8911/graphql` for playground
@@ -48,7 +67,7 @@ Showcase the RedwoodJS Transformer directive to mask an email address -- with te
 ```
 
 1. `yarn rw g directive maskedEmail` and pick Transformer or `yarn rw g directive maskedEmail --type transformer`
-1. Implement directive and test. See code.
+1. Implement directive and test. See code in `2023-02-20-mask-directive-demo/api/src/directives`.
 1. `yarn rw test api` to test transform
 1. Add directive to type
 
