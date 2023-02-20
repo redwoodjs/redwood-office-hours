@@ -1,7 +1,7 @@
 export const schema = gql`
   type Profile {
     id: Int!
-    email: String! @maskedEmail
+    email: String! @maskedEmail @uppercase
     name: String!
     birthday: DateTime! @yearOnly
   }
