@@ -7,7 +7,7 @@ Showcase the RedwoodJS Transformer directive to mask an email address -- with te
 1. `yarn install`
 1. `yarn rw prisma migrate dev` / or `yarn rw prisma migrate reset` to clear an re-seed. Seeds use Snaplet copycat.
 1. `yarn rw prisma studio` see Profile data
-1. `yarn rw dev` launch app
+1. `yarn rw dev` launch dev server app
 1. open `http://localhost:8911/graphql` for playground
 1. Query
 
@@ -105,6 +105,12 @@ Showcase the RedwoodJS Transformer directive to mask an email address -- with te
 
 1. Directives can look at arguments, so could pass in the mask charatcter to use `+` instead of `*`
 2. Directives can access currentUser auth to mask if not in a role or some other scenario
+
+## Notes
+
+1. Implemented as Yoga Plugin to the Redwood GraphQL Server (based on Yoga). See: https://github.com/redwoodjs/redwood/blob/main/packages/graphql-server/src/plugins/useRedwoodDirective.ts
+1. Testing within normal api test suite is unique
+1. Useful debug logging
 
 ---
 
