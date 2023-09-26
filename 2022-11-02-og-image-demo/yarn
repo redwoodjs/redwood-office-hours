@@ -1,0 +1,170 @@
+◈ Netlify Dev ◈
+◈ Ignored site settings env var: DATABASE_URL (defined in .env file)
+◈ Injected .env file env var: DATABASE_URL
+◈ Ignored general context env var: LANG (defined in process)
+◈ Injected .env file env var: TEST_DATABASE_URL
+◈ Injected .env file env var: SIGN_IMAGE_SECRET
+◈ Loaded function graphql http://localhost:8888/.netlify/functions/graphql.
+◈ Functions server is listening on 55082
+◈ Setting up local development server
+​
+────────────────────────────────────────────────────────────────
+  Netlify Build                                                 
+────────────────────────────────────────────────────────────────
+​
+❯ Version
+  @netlify/build 28.1.4
+​
+❯ Flags
+  {}
+​
+❯ Current directory
+  /Users/dthyresson/Dropbox/Code/redwoodjs/redwood-office-hours-examples/2022-11-02-og-image-demo
+​
+❯ Config file
+  /Users/dthyresson/Dropbox/Code/redwoodjs/redwood-office-hours-examples/2022-11-02-og-image-demo/netlify.toml
+​
+❯ Context
+  dev
+​
+────────────────────────────────────────────────────────────────
+  1. Run command for local development                          
+────────────────────────────────────────────────────────────────
+​
+◈ Starting Netlify Dev with RedwoodJS
+gen | Generating TypeScript definitions and GraphQL schemas...
+gen | 22 files generated
+​
+(dev.command completed in 5s)
+
+   ┌─────────────────────────────────────────────────┐
+   │                                                 │
+   │   ◈ Server now ready on http://localhost:8888   │
+   │                                                 │
+   └─────────────────────────────────────────────────┘
+
+◈ Loaded edge function custom-font
+◈ Loaded edge function dynamic-image
+◈ Loaded edge function emoji
+◈ Loaded edge function encrypted
+◈ Loaded edge function graphql
+◈ Loaded edge function image-svg
+◈ Loaded edge function language
+◈ Loaded edge function param
+◈ Loaded edge function pokemon
+◈ Loaded edge function splat
+◈ Loaded edge function static
+◈ Loaded edge function tailwind
+api | [2m[3mBuilding... [23m[22m[2m[3mTook 360 ms[23m[22m
+api | Debugger listening on ws://127.0.0.1:18911/c453c097-b294-44a4-a299-0dd0ec5b51fb
+api | For help, see: https://nodejs.org/en/docs/inspector
+◈ Reloading function graphql...
+◈ Reloaded function graphql
+api | [2m[3mStarting API Server...[23m[22m
+api | [2m[3m[23m[22mLoading server config from /Users/dthyresson/Dropbox/Code/redwoodjs/redwood-office-hours-examples/2022-11-02-og-image-demo/api/server.config.js 
+api | 
+api | 13:13:53 🌲 Configuring api side 
+api | 🗒 Custom
+api | {
+api |   "options": {
+api |     "side": "api",
+api |     "_": [
+api |       "api"
+api |     ],
+api |     "port": 8911,
+api |     "p": 8911,
+api |     "apiRootPath": "/",
+api |     "rootPath": "/",
+api |     "root-path": "/",
+api |     "api-root-path": "/",
+api |     "$0": "node_modules/@redwoodjs/api-server/dist/index.js"
+api |   }
+api | }
+api | [3m[2mImporting Server Functions... [22m[23m
+◈ Reloading function graphql...
+◈ Reloaded function graphql
+api | [35m/graphql[39m [3m[2m348 ms[22m[23m
+api | [3m[2m...Done importing in 348 ms[22m[23m
+api | [3m[2mTook 383 ms[22m[23m
+api | API listening on [35mhttp://localhost:8911/[39m
+api | GraphQL endpoint at [35m/graphql[39m
+api | 13:13:54 🐛 Fastify server configuration 
+api | 🗒 Custom
+api | {
+api |   "requestTimeout": 15000,
+api |   "connectionTimeout": 0,
+api |   "keepAliveTimeout": 72000,
+api |   "maxRequestsPerSocket": 0,
+api |   "requestIdHeader": "request-id",
+api |   "requestIdLogLabel": "reqId",
+api |   "disableRequestLogging": false,
+api |   "bodyLimit": 1048576,
+api |   "caseSensitive": true,
+api |   "allowUnsafeRegex": false,
+api |   "ignoreTrailingSlash": false,
+api |   "ignoreDuplicateSlashes": false,
+api |   "jsonShorthand": true,
+api |   "maxParamLength": 100,
+api |   "onProtoPoisoning": "error",
+api |   "onConstructorPoisoning": "error",
+api |   "pluginTimeout": 10000,
+api |   "http2SessionTimeout": 72000,
+api |   "exposeHeadRoutes": true
+api | }
+api | 13:13:54 🐛 Registered plugins 
+api | bound root 377 ms
+api | ├── bound _after 4 ms
+api | ├── @fastify/url-data 0 ms
+api | ├── fastify-raw-body 0 ms
+api | ├── bound _after 0 ms
+api | ├── bound _after 0 ms
+api | ├── bound _after 0 ms
+api | ├── bound _after 0 ms
+api | └── bound _after 0 ms
+api | 
+api | 13:13:54 🌲 Server listening at http://[::]:8911
+web | assets by path static/js/*.js 3.26 MiB
+web |   asset static/js/app.bundle.js 2.86 MiB [emitted] (name: app) 1 related asset
+web |   asset static/js/src_pages_HomePage_HomePage_tsx.chunk.js 187 KiB [emitted] 1 related asset
+web |   asset static/js/src_pages_ImagePage_ImagePage_tsx.chunk.js 167 KiB [emitted] 1 related asset
+web |   asset static/js/runtime-app.bundle.js 51 KiB [emitted] (name: runtime-app) 1 related asset
+web |   asset static/js/src_pages_NotFoundPage_NotFoundPage_tsx.chunk.js 3.49 KiB [emitted] 1 related asset
+web | asset favicon.png 1.7 KiB [emitted] [from: public/favicon.png] [copied]
+web | asset index.html 483 bytes [emitted]
+web | asset robots.txt 24 bytes [emitted] [from: public/robots.txt] [copied]
+web | Entrypoint app 2.91 MiB (2.88 MiB) = static/js/runtime-app.bundle.js 51 KiB static/js/app.bundle.js 2.86 MiB 2 auxiliary assets
+web | orphan modules 729 KiB [orphan] 408 modules
+web | runtime modules 34.3 KiB 19 modules
+web | modules by path ../node_modules/ 2.38 MiB 871 modules
+web | modules by path ./src/ 47.3 KiB
+web |   modules by path ./src/pages/ 8.42 KiB 4 modules
+web |   modules by path ./src/components/ 8.37 KiB 3 modules
+web |   modules by path ./src/*.tsx 3.96 KiB 2 modules
+web |   modules by path ./src/*.css 21.9 KiB
+web |     ./src/index.css 2.88 KiB [built] [code generated]
+web |     ../node_modules/@redwoodjs/core/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[3].use[1]!../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].oneOf[3].use[2]!./src/index.css 19 KiB [built] [code generated]
+web |   modules by path ./src/lib/*.ts 2.93 KiB
+web |     ./src/lib/seo.ts 1.6 KiB [built] [code generated]
+web |     ./src/lib/netlify.ts 1.33 KiB [built] [code generated]
+web |   ./src/layouts/MainLayout/MainLayout.tsx 1.77 KiB [built] [code generated]
+web | webpack 5.74.0 compiled successfully in 2710 ms
+Request from ::1: POST /.netlify/functions/graphql
+Response with status 200 in 1250 ms.
+Request from ::1: POST /.netlify/functions/graphql
+Response with status 200 in 116 ms.
+Request from ::1: POST /.netlify/functions/graphql
+Response with status 200 in 235 ms.
+Request from ::1: POST /.netlify/functions/graphql
+Response with status 200 in 124 ms.
+Request from ::1: POST /.netlify/functions/graphql
+Response with status 200 in 127 ms.
+Request from ::1: POST /.netlify/functions/graphql
+Response with status 200 in 111 ms.
+Request from ::1: POST /.netlify/functions/graphql
+Response with status 200 in 127 ms.
+Request from ::1: POST /.netlify/functions/graphql
+Response with status 200 in 127 ms.
+Request from ::1: POST /.netlify/functions/graphql
+Response with status 200 in 106 ms.
+Request from ::1: POST /.netlify/functions/graphql
+Response with status 200 in 101 ms.
