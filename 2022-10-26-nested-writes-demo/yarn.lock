@@ -2009,10 +2009,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@faker-js/faker@npm:^6.2.0":
-  version: 6.3.1
-  resolution: "@faker-js/faker@npm:6.3.1"
-  checksum: 83e18c4269cc4201a87ee38640dadc47af64b5f1eb96514eeab17f21d0a9fb86728e16a94707c26e7dfe25f96d651a6647613ecd1dc2c07b5d85606b51ac6150
+"@faker-js/faker@npm:^8.0.2":
+  version: 8.2.0
+  resolution: "@faker-js/faker@npm:8.2.0"
+  checksum: 0b7c29714f61d9e862baad29f43c016f0d3ba4b22ba1ebc963e587f15744c145b4e3a4dc8b328dc139472a75fa19e769d53986e158e717fedf5b64862bbbfec7
   languageName: node
   linkType: hard
 
@@ -4166,14 +4166,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snaplet/copycat@npm:^0.12.0":
-  version: 0.12.0
-  resolution: "@snaplet/copycat@npm:0.12.0"
+"@snaplet/copycat@npm:^0.18.0":
+  version: 0.18.1
+  resolution: "@snaplet/copycat@npm:0.18.1"
   dependencies:
-    "@faker-js/faker": ^6.2.0
-    fictional: ^0.7.6
+    "@faker-js/faker": ^8.0.2
+    fictional: ^0.10.1
     uuid: ^8.3.2
-  checksum: fd7a535c17bc05e9eaeddab0aaba7d96b030caf486b543acf800b592993f22cc401069f5af2300e5068cb3537613d20cfed5875b35e2870070a78edc5b20d94a
+  checksum: 3f90a750fad2d60fa8d22f76a003bcfd88a190d189f5fa495166af16bd90dc1ea13c361cf80bdf0b7e2e2b0499ad54dc648294b14ff3ecf78ec7547117e67c82
   languageName: node
   linkType: hard
 
@@ -7302,7 +7302,7 @@ __metadata:
   dependencies:
     "@redwoodjs/api": 3.4.0
     "@redwoodjs/graphql-server": 3.4.0
-    "@snaplet/copycat": ^0.12.0
+    "@snaplet/copycat": ^0.18.0
   languageName: unknown
   linkType: soft
 
@@ -12327,14 +12327,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fictional@npm:^0.7.6":
-  version: 0.7.6
-  resolution: "fictional@npm:0.7.6"
+"fictional@npm:^0.10.1":
+  version: 0.10.1
+  resolution: "fictional@npm:0.10.1"
   dependencies:
     decimal.js: ^10.4.0
     fast-json-stable-stringify: ^2.1.0
-    md5: ^2.3.0
-  checksum: 182c6d6ee2c75dd72528efe08cff2dd658db8e965414aaccc47f7228efa64a25610d4adea5d5ee3fe43d637f83368ba11527037ec69bd3ca554405745840cb90
+    fnv-plus: ^1.3.1
+    siphash: ^1.1.0
+  checksum: 79c3d6c0fd50168df6ce013c6f76e7170c334e38181b5c24502e7b485eca83e4913168365949a8e3542e8c3b3fb061c899817dbe8d4ff83cb960a5df0d2e8bdc
   languageName: node
   linkType: hard
 
@@ -12556,6 +12557,13 @@ __metadata:
     inherits: ^2.0.3
     readable-stream: ^2.3.6
   checksum: 2cd4f65b728d5f388197a03dafabc6a5e4f0c2ed1a2d912e288f7aa1c2996dd90875e55b50cf32c78dca55ad2e2dfae5d3db09b223838388033d87cf5920dd87
+  languageName: node
+  linkType: hard
+
+"fnv-plus@npm:^1.3.1":
+  version: 1.3.1
+  resolution: "fnv-plus@npm:1.3.1"
+  checksum: 770b253629c8e27cff3d94e68fbb94069daeac2b1df833bb03afb280c869ad43b40ecec0fe3a9b6745fa8e549b6c9b4bb6019311cf6d100b8df38497a3d2c258
   languageName: node
   linkType: hard
 
@@ -16577,7 +16585,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"md5@npm:2.3.0, md5@npm:^2.3.0":
+"md5@npm:2.3.0":
   version: 2.3.0
   resolution: "md5@npm:2.3.0"
   dependencies:
@@ -20953,6 +20961,13 @@ __metadata:
   dependencies:
     semver: ~7.0.0
   checksum: a1c536a037818f45128cbeb96e89d11c8a241f13eb2a301b95c4b78a563e1b652a7d2213d3c111383babac2bcbef7b04e6b33e7ae48023d5f660f4d44e7ecfbe
+  languageName: node
+  linkType: hard
+
+"siphash@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "siphash@npm:1.1.0"
+  checksum: e015d0127adb1805183c3db15b50c0ae09115ada9adf325941ed66ea1db155665071daccd28f09b7963bf61985419a8dbc44a3e98176717c298ba6124c293012
   languageName: node
   linkType: hard
 
