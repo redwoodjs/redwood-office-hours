@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redwoodjs/api": "4.1.4",
-    "@redwoodjs/graphql-server": "4.1.4",
+    "@redwoodjs/api": "8.4.0",
+    "@redwoodjs/graphql-server": "8.4.0",
     "@snaplet/copycat": "^0.13.4"
   }
 }
