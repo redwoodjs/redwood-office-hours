@@ -26,5 +26,5 @@
   "scripts": {
     "netlify-toml": "yarn rw exec og-edge-function-toml"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.8.6"
 }
